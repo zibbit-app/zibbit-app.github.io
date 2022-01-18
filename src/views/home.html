@@ -1,0 +1,360 @@
+<div class="page page-home">
+        <div class="section-intro">
+            <div class="row no-gutters">
+                <div class="col-12 col-md-auto intro-wrapper window-height">
+                    <div class="header-wrapper">
+                        <h2 class="subtitle">Assemble exhibits with automation</h2>
+
+                        <div class="logoWrapper" data-toggle="collapse" data-target="#collapseMobileMenu" aria-expanded="false" aria-controls="collapseExample">
+                            <logo-ui></logo-ui>
+                        </div> 
+                    </div>
+                    <div class="header-content">
+                        <!-- <div id="collapseMobileMenu" class="mobile-menu-wrapper collapse">
+                            <menu-ui (navigationEvent)="menuClickHandler()" class="mobile"></menu-ui>
+                        </div>     -->
+                        <div class="intro">
+
+                            <div class="summaryBenefits">
+                                <div class="numberWrapper" *ngFor='let item of summaryBenefit.items'>
+                                    <i class="fas fa-check-square checkbox"></i>
+                                    <div class="subtitle">{{item}}</div>
+                                </div>
+                            </div>
+
+                            <div class="btn-bar">
+                                <!-- <i class="fas fa-chevron-down d-block d-md-none"></i> -->
+                                <a (click)="scroll('product-section')" class="btn-dark btn-getStarted">Learn More</a>
+                                <a class="btn-dark btn-getStarted" routerLink='/learn'>Get Started</a>        
+
+                                <!-- <a class="btn-dark btn-download d-none d-md-inline-block" routerLink='/downloads'>Download</a>             -->
+
+                                <!-- <a class="btn-dark btn-download d-none d-md-inline-block">Download</a>                 -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-12 col-md">
+
+                    <!-- <div id="product-section">
+                        <div class="container">
+            
+                            <div class="stamp">
+                                <div class="features-block">
+                                        <div class="features">
+                                            <div class="row no-gutters">
+                                                <div class="col-12 col-md-6" *ngFor="let feature of benefits">
+                                                    <div class="feature">
+                                                        <div class="header">
+                                                            <i class="icon {{feature.icon}}"></i>
+                                                            <div class="subtitle">{{feature.title}}</div>
+                                                        </div>
+                                                        <div class="content">
+                                                            <div class="steps">
+                                                                <div class="numberWrapper-top" *ngFor='let item of feature.items'>
+                                                                    <i class="fas fa-check-square checkbox"></i>
+                                                                    <div class="subtitle">{{item}}</div>
+                                                                </div>
+                                                            </div>                        
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>        
+                                </div>  
+                            </div>
+            
+                        </div>
+            
+                        <div class="product-section">
+                        </div>    
+            
+                    </div> -->
+            
+
+
+                    <div class="prodImgWrapper">
+                            <!-- <div class="word-app">
+                                <div class="header">
+                                    <ribbon-ui [showTabs]="true" [showRibbon]="false"></ribbon-ui>
+                                </div>
+                                <div class="body">
+                                    <div class="doc">
+                                        <div class="doc-content"></div>
+                                    </div>
+                                    <div class="zibbit">
+                                        <img src="{{productImgUrl}}"/>
+                                    </div>
+        
+                                </div>
+                                <div class="footer"></div>
+                            </div> -->
+
+                        <div [ngStyle]="style()" class="product-wrapper window-height">
+                            
+                            <!-- <div class="stamp">
+                                <div class="intro">
+                                    <h2 class="subtitle">Assemble exhibits with automation</h2>
+                                    <div class="btn-bar">
+                                        <a (click)="scroll('product-section')" class="btn-dark btn-getStarted">Learn More</a>
+                                        <a class="btn-dark btn-getStarted" routerLink='/learn'>Get Started</a>                
+                                    </div>
+                                </div>
+        
+                            </div> -->
+
+
+                            <!-- <img src="{{productImgUrl}}"/> -->
+                            <!-- <div class="stamp">
+                                <div class="howItWorks wrapper easyToUse">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6">
+                                            <div class="header">
+                                                <div class="title">3 Steps</div>
+                                                <div class="summary">Generate a PDF in 3 simple steps</div> 
+        
+                                            </div>        
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <div class="content">
+                                                <div class="steps">
+                                                    <div class="numberWrapper">
+                                                        <div class="number">1</div>
+                                                        <div class="subtitle">Import exhibits</div>
+                                                    </div>
+                                                    <div class="numberWrapper">
+                                                        <div class="number">2</div>
+                                                        <div class="subtitle">Reference exhibits</div>
+                                                    </div>
+                                                    <div class="numberWrapper">
+                                                        <div class="number">3</div>
+                                                        <div class="subtitle pdf-step">
+                                                            <span>Publish PDF</span>        
+                                                        </div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                        </div>   
+                                        
+                                    </div>
+                                </div>
+        
+        
+                            </div> -->
+                        </div>
+    
+                    </div>
+                    <!-- <div class="prodImgWrapper">
+                        <img src="{{productImgUrl}}"/>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+        <section id="product-section">
+            <div class="container">
+                <div class="titleWrapper">
+                    <h2 class="title">Features</h2>
+                </div>
+
+                <div class="stamp">
+                    <div class="features-block">
+                            <div class="features">
+                                <div class="row no-gutters">
+                                    <div class="col-12 col-md-6 col-lg-3" *ngFor="let feature of benefits">
+                                        <div class="feature">
+                                            <div class="header">
+                                                <i class="icon {{feature.icon}}"></i>
+                                                <div class="subtitle">{{feature.title}}</div>
+                                            </div>
+                                            <div class="content">
+                                                <div class="steps">
+                                                    <div class="numberWrapper-top" *ngFor='let item of feature.items'>
+                                                        <i class="fas fa-check-square checkbox"></i>
+                                                        <div class="subtitle">{{item}}</div>
+                                                    </div>
+                                                </div>                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>        
+                    </div>  
+                </div>
+
+            </div>
+
+            <div class="product-section">
+            </div>    
+
+        </section>
+        <section id="process-section" class="process">
+            <div class="titleWrapper">
+                <h2 class="title">Three Simple Steps</h2>
+                <p>Case Study: Affidavit</p>    
+            </div>
+            <div class="container">
+                <div class="step">
+                    <div class="row">  
+                        <div class="col-12 col-md-6 order-2">
+                            <div class="exhibits">
+                                <div class="stepFigure">
+                                    <p class="subtitle">Exhibits</p>
+                                    <ul class="pdf-collection">
+                                        <li class="pdf" *ngFor="let exhibit of exhibits">
+                                            <i class="far fa-file-pdf"></i>
+                                            <p>{{exhibit}}.pdf</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="stepSummary">
+                                <div class="numberWrapper">
+                                    <div class="number">1</div>
+                                    <h2 class="subtitle">Import Exhibits</h2>    
+                                </div>     
+                                <ul >
+                                    <li>Exhibits can be added, removed, and re-ordered at any time</li>
+                                    <li>After an exhibit has been added it can be referenced throughout your document</li>
+                                </ul>    
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+                <div class="step">
+                    <div class="row">
+                        <div class="col-12 col-md-6 order-2 order-sm-1">
+                            <div class="stepFigure">
+                                <div class="references">
+                                    <div class="word-wrapper">
+                                        <ribbon-ui [docTitle]="'Affidavit'" [showTabs]="false" [showRibbon]="false"></ribbon-ui>
+                                        <div class="body">
+                                            <div class="page-wrapper">
+                                                <doc-lines-ui></doc-lines-ui>
+                                            </div>
+                                            <div class="zibbit-pane">
+                                                <div class="header">
+                                                    <h3>Zibbit</h3>
+                                                </div>
+                                                <div class="body">
+                                                    <ul>
+                                                        <li *ngFor="let exhibit of exhibits; let i = index"><p>{{i + 1}}. {{exhibit}}</p></li>
+                                                    </ul>
+                                                    <div class="insert">
+                                                        <p>Insert</p>
+                                                    </div>   
+                                                </div>
+                                            </div>   
+                                        </div>
+                                        <div class="footer"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 order-sm-2">
+                            <div class="stepSummary">
+                                <div class="numberWrapper">
+                                    <div class="number">2</div>
+                                    <h2 class="subtitle">Reference Exhibits</h2>    
+                                </div>
+                                <ul >
+                                    <li>References can hyperlink to exhibits in your appendix</li>
+                                    <li>Reference labels are fully customizable</li>
+                                </ul>    
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="row">
+                        <div class="col-12 col-md-6 order-2">
+                            <div class="stepFigure">
+                                <div class="publish">
+                                    <div class="pdf-wrapper">
+                                        <div class="pdf-header titleBar">
+                                            <div class="item">PDF - Affidavit</div>
+                                            <!-- <div class="openPdf">
+                                                <a class="sample" [href]="pdfUrl" target="_blank">Open</a>
+                                            </div> -->
+                                        </div>
+                                        <div class="body">
+                                            <div class="bookmarks">
+                                                <div class="subtitle">Bookmarks</div>
+                                                <ul>
+                                                    <li>
+                                                        <i class="far fa-bookmark"></i>
+                                                        <p>Affidavit</p>
+                                                    </li>
+                                                    <li *ngFor="let exhibit of exhibits; let i = index">
+                                                        <i class="far fa-bookmark"></i>
+                                                        <p>Exhibit {{i + 1}} - {{exhibit}}</p>
+                                                    </li>
+                                                </ul>            
+        
+                                            </div>
+        
+                                            <div class="page-wrapper">
+                                                <doc-lines-ui></doc-lines-ui>
+                                                <div class="appendix-wrapper">
+                                                    <p class="subtitle">Appendix</p>
+        
+                                                    <div class="appendix">
+                                                        <ul>
+                                                            <li *ngFor="let exhibit of exhibits; let i = index">
+                                                                <i class="far fa-file-pdf"></i>
+                                                                <p>Exhibit {{i + 1}}</p>
+                                                            </li>
+                                                        </ul>       
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="stepSummary">
+                                <div class="numberWrapper">
+                                    <div class="number">3</div>
+                                    <h2 class="subtitle">Publish PDF</h2>    
+                                </div>
+                                <ul>
+                                    <li>Generate a PDF <a class="sample" [href]="pdfUrl" target="_blank">(Affidavit.pdf)</a> document with an appendix of exhibits</li>
+                                    <li>Create PDF bookmarks</li>
+                                </ul>    
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="glance">
+            <h2 class='title'>At a glance</h2>
+            <div class="container">
+                <img [src]="images.get('manage-exhibits-window')"/>
+            </div>
+        </section>
+        <section class="getStarted">
+            <h2 class='title'>Try it out!</h2>
+            <a class="btn-dark btn-getStarted" routerLink='/learn'>Get Started</a>        
+        </section>
+    
+  <!-- <section class="section-carousel">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                    <carousel-ui [slideUrls]="slideUrls">
+                    </carousel-ui>  
+              </div>
+          </div>
+      </div>
+     
+  </section> -->
+
+</div>

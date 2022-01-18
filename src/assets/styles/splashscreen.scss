@@ -1,0 +1,29 @@
+.splash-screen{
+    img{
+        max-height: 100%;
+        max-width: 100%;
+    }
+    .content-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        opacity: 0.4;
+    }
+    .size-large{
+        background: gainsboro;
+        .img-wrapper{
+            height: 100px;
+        }
+    }
+    .size-small{
+        .img-wrapper{
+            height: 20px;
+        }
+    }
+}
+
+.displayType-absolute{
+    &, .content-wrapper{
+        height: 100%;
+    }
+}

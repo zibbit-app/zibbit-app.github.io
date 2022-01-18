@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+      "allowSyntheticDefaultImports": true,
+      "target": "es5",
+      // "types": ["node"],
+      "baseUrl": "./",
+      // "paths": {
+      //   "core-js/es7/reflect": [
+      //     "node_modules/core-js/proposals/reflect-metadata"
+      //   ]
+      // },
+      "outDir": "dist",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "experimentalDecorators": true, //angular needs decorators like @Component, @Injectable, etc.
+      "emitDecoratorMetadata": true, //for angular to be able to use metadata we specify in our components.
+      "lib": [
+        "ES5",
+        "dom",
+        // "es2015"
+      ],
+      "typeRoots": ["node_modules/@types"],
+      "types": [
+        "node",
+        "webpack-env"
+      ]
+    },
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+
+  }

@@ -1,0 +1,38 @@
+
+//colours
+//$zibbitTheme: #774ea2e0;//slateblue;
+$msRibbonGrey: #f3f2f1;
+$msTitleBar: #185abd;
+$pdfRed: #e52929;
+$grey: #f4f4f4; //#c1bfbf
+$darkGray: #7d62a5cf;
+$white: white;
+$black: #2e302b;
+$blackSoft: #383d41;
+$purple: #966d96;
+$green: #2fa02f;
+
+$zibbitTheme: #035762d9;
+$zibbitThemeLight: white; //gainsboro//$msRibbonGrey; //#7ebec791;// #0357628f; 
+$zibbitThemeDark: #034a53;
+$zibbitThemeSecondary: #d3d3d3;
+
+
+// $severityColourInfo: #be4bdb;
+$severityColourInfo: $purple;
+$severityColourWarning: yellow;
+$severityColourError: red;
+
+//general
+$boxShadow: 0 8px 10px 0 rgba(0, 0, 0, 0.06);
+$boxShadowHeavy: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+//fonts
+//$fa-font-path: "~font-awesome/fonts";
+
+
+//breakpoints
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;

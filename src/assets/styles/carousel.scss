@@ -1,0 +1,32 @@
+@import 'variables';
+.carousel{
+    .carousel-inner{
+        //box-shadow: $boxShadow;
+        border: dashed 0.7px gray;
+    }
+    .carousel-controls{
+        justify-content: flex-end;
+        margin-bottom: 10px;
+        .carousel-control-wrapper{
+            display: inline-block;
+            a{
+                display: inline-block;
+                position: static;
+                width: auto;
+                margin-left: 5px;
+            }
+        }
+    
+        .carousel-icon-wrapper{
+            background-color: black;
+            padding: 8px;
+        }
+    }
+
+
+    .carousel-inner{
+        margin: auto;
+    }
+
+    
+}

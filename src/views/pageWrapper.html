@@ -1,0 +1,12 @@
+<div [ngClass]="['page-wrapper']">
+    <ul class="notice-collection">
+        <li *ngFor="let notice of notices" [hidden]="!notice.isVisible">
+            <noticeBar-ui (closeNoticeEvent)="notice.end()" [hidden]="!notice.isVisible" [notice]="notice"></noticeBar-ui>
+        </li>
+    </ul>      
+    <div class="content">
+        <splashscreen-ui id="pageSplash" [displayType]="'absolute'" [size]="'large'" [hidden]="!isBusy"></splashscreen-ui>
+        <ng-content></ng-content>
+    </div>
+    
+</div>

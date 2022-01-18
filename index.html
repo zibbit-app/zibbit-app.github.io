@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>Zibbit</title>
+     <!-- Required meta tags --> 
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- linkedin sharable --> 
+    <!-- <meta property='og:title' content='Zibbit'>
+    <meta property='og:image' content='/uploads/main/MacroManager Logo Stacked.png'/>
+    <meta property='og:url' content='//www.example.com/URL of the article' /> -->
+ 
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+     <!-- fontwaresome -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+     
+     <!-- fav icon --> 
+     <link rel="shortcut icon" type="img/png" href="uploads/main/favicon.ico">
+
+  </head>
+  <base href="./">
+  <body>
+
+    <!-- Github Pages hack to allow SPA refresh without receiving 404. -->
+  <script>
+      (function () {
+        // Retrieve the URL the user was trying to access when receiving the 404.
+        var redirect = sessionStorage.redirect;
+        // Remove the URL from sessionStorage.
+        delete sessionStorage.redirect;
+        // Check if we actually need to redirect.
+        if (redirect && redirect != location.href) {
+          // We need to redirect to the URL the user was trying to access.
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+
+    <!-- <app-main>Loading...</app-main> -->
+    <!-- <script src="node_modules/systemjs/dist/system.js"></script> -->
+    <!-- <script src="systemjs.config.js"></script> -->
+    <script>
+      // System.import('./dist/startup.js').catch(
+      //   function (err) {
+      //     console.log(err.message);
+      // });
+    </script>
+
+    <app-ui>Loading...</app-ui>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+    <script type="text/javascript" src="/dist/bundle/runtime.js"></script>
+    <script type="text/javascript" src="/dist/bundle/vendor.js"></script>
+    <script type="text/javascript" src="/dist/bundle/polyfills.js"></script>
+    <script type="text/javascript" src="/dist/bundle/app.js"></script>
+  </html>

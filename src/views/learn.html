@@ -1,0 +1,54 @@
+<div class="page page-learn">
+    <section class="section-example">
+            <div class="row no-gutters">
+                <div class="col-12 col-md-auto stamp-wrapper">
+                    <div class="download-stamp">
+                        <h1 class="title">Get Started</h1>
+                        <p>Download the latest version of Zibbit</p>
+                        <a class="btn-dark" routerLink='/downloads'>Download</a>            
+                    </div>
+                </div>
+                <div class="col-12 col-sm">
+                    <div class="steps">
+                        <div class="step" *ngFor="let chapter of chapters; let i = index">
+                            <div class="numberWrapper">
+                                <div class="number">{{ i + 1 }}</div>
+                                <h2 class="subtitle">{{chapter.title}}</h2>    
+                            </div>
+                            <div class="step-content-wrapper" *ngFor="let step of chapter.steps">
+
+                                <div class="row no-gutters step-content">
+                                    <div class="col-12 col-sm">
+                                        <div class="summary-wrapper">
+                                            <div class="ribbon-wrapper">
+                                                <ribbon-ui [selectedIconUrl]="step.ribbonIconUrl" [selectedIconPosition]="step.ribbonIconPosition"></ribbon-ui>
+                                            </div>
+                                            <div class="description-wrapper">
+                                                <h3 class="step-title">{{step.title}}</h3>
+                                                <ul class="description">
+                                                    <li *ngFor="let item of step.items">
+                                                        <p>{{item}}</p>
+                                                    </li>
+                                                </ul>    
+                                            </div>
+                                        </div> 
+       
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="img-wrapper-pane">
+                                            <img [src]="step.imgUrl"/>
+                                        </div>    
+                                    </div>
+
+                                </div>
+    
+                            </div> 
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </section>
+</div>
+
+      

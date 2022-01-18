@@ -1,0 +1,19 @@
+<div [ngClass]="['notice-bar']">
+    <div [ngClass]="['severity-colour', 'severity-colour-' + notice.severity]">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="item-wrapper">
+                        <div class="content-wrapper">
+                            <!-- <i [ngClass]="['severity-' + notice.severity + '-symbol']"></i>         -->
+                            <p>{{notice.message}}</p>
+                        </div>
+                        <a (click)="closeClickHandler($event)" class="my-close"></a>
+                        <!-- <i (click)="closeClickHandler()" class="my-close"></i> -->
+                    </div>
+                    <!-- <i [ngClass]="['severity-' + notice.severity + '-symbol']"></i> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

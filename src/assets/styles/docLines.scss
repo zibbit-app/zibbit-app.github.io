@@ -1,0 +1,30 @@
+@import 'global';
+
+
+    .page-content{
+        padding: 10px;
+        padding-right: 5px;
+        .line{
+            margin-top: 5px;
+            min-width: 100px;
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            > div{    
+                // display: inline-block;
+                margin-right: 5px;
+                // margin-bottom: 0px;
+            }
+    
+        }
+        .ref{
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .fake-text{
+            background: #d3d3d34f;
+            height: 10px;
+            flex-grow: 1;
+
+        }
+    }

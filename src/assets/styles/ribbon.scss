@@ -1,0 +1,51 @@
+@import 'global';
+
+.ribbon{
+    // width: 240px;
+    background: $msRibbonGrey;
+    .titleBar{
+        background: $msTitleBar;
+        padding: 5px;
+        color: white;
+        .item{
+            margin-left: 10px;
+            font-weight: 500;
+        };
+    }
+    .tabs-wrapper{
+        width: 300px;
+    }
+    .tabs{
+        display: flex;
+        justify-content: space-around;
+        color: black;
+        .tab{
+            margin: 10px;
+            //filter:blur(1.5px);
+            font-size: 14px;
+            // padding: 5px;
+
+        }
+        .selected{
+            filter:blur(0px);
+            border-bottom: 5px solid #185abd;
+            font-weight: 500;
+        }
+    }
+    .ribbon-content{
+        display: flex;
+        justify-content: space-around;
+        .img-wrapper-icon{
+            max-width: 32px;
+            margin: 10px;
+            img{
+                filter: blur(8px);
+            }
+        }
+        .selected{
+            img{
+                filter: blur(0px);
+            }
+        }
+    }
+}

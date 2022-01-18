@@ -1,0 +1,15 @@
+<div class="app">
+    <header *ngIf="showHeader">
+        <header-ui class='header'></header-ui>
+    </header>
+    <main>
+        <router-outlet></router-outlet>
+
+        <!-- <pageWrapper-ui [isBusy]="isBusy" [notices]="notices">
+            <router-outlet></router-outlet>
+        </pageWrapper-ui> -->
+    </main>
+    <footer *ngIf="showFooter">
+        <footer-ui></footer-ui>
+    </footer>
+</div>

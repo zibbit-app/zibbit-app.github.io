@@ -1,0 +1,23 @@
+@import 'global';
+
+.logo-wrapper{
+    text-align: center;
+    // max-width: 75px;
+}
+.logo{
+    // margin: 0px -25px;
+    // color: $black;
+    font-size: 30px;
+    text-decoration: none;
+    img{
+        margin-bottom: -10px;
+    }
+    .fa-frog{
+        margin-bottom: -5px;
+        font-size: 70px;
+    }
+    .appName{
+        margin: 0px;
+        font-size: 30px;
+    }
+}

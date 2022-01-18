@@ -1,0 +1,32 @@
+@import 'global';
+.notice-bar{
+    .item-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .content-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px 0px;
+        p{
+            padding-right: 10px;
+            margin: 0px;
+            color: white;
+        }
+
+    }
+    .severity-colour{
+        background-color: $severityColourInfo;
+    }
+    // .severity-info{
+    // }
+    .serverity-warning{
+        background-color: $severityColourWarning;
+    }
+    .serverity-error{
+        background-color: $severityColourError;
+    }
+
+}

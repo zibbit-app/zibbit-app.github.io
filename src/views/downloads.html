@@ -1,0 +1,24 @@
+<!-- <pageWrapper-ui [isBusy]="isBusy" [notices]="notices" > -->
+    <div class="page page-downloads">
+        <div class="page-wrapper">
+            <section class="section-downloads">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="title">Installers</h1>
+                            <p>Enjoy your free trial</p>
+                            <ul class="installers">
+                                <li *ngFor="let installer of installers">  
+                                    <a [href]="installer.downloadUrl" download> {{installer.title}} </a>
+                                </li>
+                            </ul>
+                         
+                        </div>
+                    </div>
+                </div>
+            </section>  
+        </div>        
+    </div>
+<!-- </pageWrapper-ui> -->
+
+      

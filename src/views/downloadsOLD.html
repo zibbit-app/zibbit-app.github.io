@@ -1,0 +1,28 @@
+<pageWrapper-ui [isBusy]="isBusy" [notices]="notices" >
+    <div class="page page-downloads">
+        <section class="section-downloads">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="title"> Windows Installers </h1>
+                        <p>
+                            This application is currently in the beta testing phase.
+                        </p>
+                        <ul class="installers">
+                            <li *ngFor="let installer of installers">
+                                <div class="item-wrapper">
+                                    <a (click)="installerClickHandler($event)" class="installer" attr.version="{{installer.version}}">
+                                        {{installer.title}}
+                                    </a>
+                                    <splashscreen-ui [size]="'small'" [hidden]="true" ></splashscreen-ui>
+                                </div>
+                            </li>
+                        </ul>            
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</pageWrapper-ui>
+
+      

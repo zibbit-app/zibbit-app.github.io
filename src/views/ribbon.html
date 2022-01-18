@@ -1,0 +1,18 @@
+<div class="ribbon">
+    <div class="titleBar">
+        <div class="item">Word{{(docTitle ? ' - ' + docTitle : '')}}</div>
+    </div>
+    <div *ngIf="showTabs" class="tabs-wrapper">
+        <div class="tabs d-flex">
+            <div class="tab">File</div>
+            <div class="tab">Home</div>
+            <div class="tab selected">Zibbit</div>
+            <div class="tab">Help</div>    
+        </div>
+        <div *ngIf="showRibbon" class="ribbon-content">
+            <div [ngClass]="i == selectedIconPosition ? 'img-wrapper-icon selected' : 'img-wrapper-icon'" *ngFor="let img of iconUrls; let i = index">
+                <img [src]="img"/>
+            </div>
+        </div>
+    </div>
+</div>
