@@ -1344,9 +1344,9 @@ function () {
   };
 
   ProductInfoService.prototype.initializeInstallers = function () {
-    var title = 'zibbit'; // var url = downloadsPath + `${title}_v${version}.msi`;
-
-    var installer1 = this.getInstaller(title, '1.0.7.0'); //new Installer(title + "_v" + version, version, url);
+    var title = 'zibbit';
+    var installer1 = this.getInstaller(title, '1.0.8.0'); //new Installer(title + "_v" + version, version, url);
+    //var installer1 = this.getInstaller(title, '1.0.7.0'); //new Installer(title + "_v" + version, version, url);
     // var downloadsPath = this.config.getUploadsPath() + '/macro-manager-installers';
     // var title = 'MacroManager';
     // var version = '1.1.68.0';
