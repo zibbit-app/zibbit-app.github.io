@@ -104,7 +104,7 @@ export class ProductInfoService {
     private initializeInstallers(): Installer[]{
       
       var title = 'zibbit';
-      var installer1 = this.getInstaller(title, '1.0.8.0'); //new Installer(title + "_v" + version, version, url);
+      var installer1 = this.getInstaller(title, '1.0.9.0'); //new Installer(title + "_v" + version, version, url);
 
       //var installer1 = this.getInstaller(title, '1.0.7.0'); //new Installer(title + "_v" + version, version, url);
 
