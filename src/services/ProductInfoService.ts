@@ -38,7 +38,7 @@ export class ProductInfoService {
       //exhibitBen.icon = "far fa-folder";
       exhibitBen.items.push("Easy to use");
       exhibitBen.items.push("Customizable");
-      exhibitBen.items.push("Reliable results");
+      exhibitBen.items.push("Data Security");
       return exhibitBen;
     }
 

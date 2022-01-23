@@ -3,17 +3,38 @@
         <div class="page-wrapper">
             <section class="section-downloads">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <h1 class="title">Installers</h1>
-                            <p>Enjoy your free trial</p>
-                            <ul class="installers">
-                                <li *ngFor="let installer of installers">  
-                                    <a [href]="installer.downloadUrl" download> {{installer.title}} </a>
-                                </li>
-                            </ul>
-                         
-                        </div>
+                    <h1 class="title">Installation</h1>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-12 col-md-12">
+                                <div class="box">
+                                    <h2 class="subtitle">System Requirements</h2>
+                                    <p>Zibbit is a Microsoft Word Add-in with 2 system requirements:</p>
+                                    <ul>
+                                        <li>
+                                            <div>Microsoft Word (2007 or later)</div>
+                                        </li>
+                                        <li>
+                                            <div>Microsoft Edge WebView2 Runtime
+                                            (<a target="_blank" href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/">Learn more</a> or <a href="https://go.microsoft.com/fwlink/p/?LinkId=2124703">Download</a>)
+                                            </div>
+                                        </li>
+                                    </ul>    
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-12">
+                                <div class="box">
+                                    <h2 class="subtitle">Windows Installers</h2>
+                                    <!-- <p>Enjoy your free trial</p> -->
+                                    <ul class="installers">
+                                        <li *ngFor="let installer of installers">  
+                                            <a [href]="installer.downloadUrl" download> {{installer.title}} </a>
+                                        </li>
+                                    </ul>
+    
+                                </div>
+                            </div>
+                        </div>    
                     </div>
                 </div>
             </section>  
