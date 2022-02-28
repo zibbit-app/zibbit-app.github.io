@@ -4,20 +4,24 @@
     text-align: center;
     // max-width: 75px;
 }
+.set-width{
+    width: 200px;
+}
 .logo{
     // margin: 0px -25px;
     // color: $black;
-    font-size: 30px;
-    text-decoration: none;
+    // font-size: 30px;
+    // text-decoration: none;
     img{
-        margin-bottom: -10px;
+        // margin-bottom: -10px;
     }
-    .fa-frog{
-        margin-bottom: -5px;
-        font-size: 70px;
-    }
+    // .fa-frog{
+    //     margin-bottom: -5px;
+    //     font-size: 70px;
+    // }
     .appName{
         margin: 0px;
-        font-size: 30px;
+        font-size: 28px;
+        letter-spacing: 2.5px;
     }
 }

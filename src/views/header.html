@@ -7,8 +7,8 @@
                 <div class='header-content' [style.justify-content]="(hideLogo ? 'flex-start' : 'space-between')">
                     <div *ngIf="!hideLogo" class="logo-wrapper">
                         <a (click)="menuClickHandler()" class='logo' [routerLink]="['/home']">
-                            <img src= {{logoUrl}}>
-                            <h1 class="appName">Zibbit</h1>
+                            <logo-ui [type]='0' [hideText]=true></logo-ui>
+                            <!-- <img src= {{logoUrl}}> -->
                         </a> 
                     </div>
 

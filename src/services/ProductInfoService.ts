@@ -9,6 +9,14 @@ import { Benefit } from '../models/Benefit';
 import { TutorialStep } from '../models/TutorialStep';
 
 
+export enum LogoType{
+  Normal,
+  Light,
+  Dark,
+  Transparent,
+  WithText,
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -86,8 +94,19 @@ export class ProductInfoService {
       return this.email;
     }
 
-    public getLogoUrl(isDark = true): string{
-      return this.config.getUploadsPath() + '/main/Zibbit_Logo_Dark.ico';
+    public getLogoUrl(logoType: LogoType = LogoType.Normal): string{
+      const base = this.config.getUploadsPath() + '/main/';
+      switch(logoType){
+        case LogoType.Dark:
+          return base + 'Zibbit_Logo_Dark.svg';
+        case LogoType.Transparent:
+          return base + 'Zibbit_Logo_Trans.svg';
+        case LogoType.WithText:
+          return base + 'Zibbit_Logo_Stacked_Horizontal.svg';
+        default:
+          return base + 'Zibbit_Logo.svg';
+  
+      }
     }
 
     public getSpinnerUrl(): string{
@@ -104,7 +123,7 @@ export class ProductInfoService {
     private initializeInstallers(): Installer[]{
       
       var title = 'zibbit';
-      var installer1 = this.getInstaller(title, '1.0.13.0'); //new Installer(title + "_v" + version, version, url);
+      var installer1 = this.getInstaller(title, '2.0.1.0'); //new Installer(title + "_v" + version, version, url);
 
       //var installer1 = this.getInstaller(title, '1.0.7.0'); //new Installer(title + "_v" + version, version, url);
 

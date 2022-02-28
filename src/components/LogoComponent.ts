@@ -1,7 +1,5 @@
 import {Component, Input} from "@angular/core"
-import {ProductInfoService} from "../services/ProductInfoService";
-import {Card} from '../models/Card'
-
+import {LogoType, ProductInfoService} from "../services/ProductInfoService";
 @Component({
     moduleId: module.id,
     //moduleId: __moduleName,
@@ -10,12 +8,19 @@ import {Card} from '../models/Card'
     styleUrls: ["../assets/styles/logo.scss"]
 })
 export class LogoComponent {
+    @Input() type: LogoType = LogoType.Normal;
+    @Input() hideText: boolean = false;
 
+ 
     get logoUrl() {
-        return this.prodInfoService.getLogoUrl();
+        return this.prodInfoService.getLogoUrl(this.type);
     }
+
+    get ShowText(){
+        return !this.hideText && this.type !== LogoType.WithText;
+    }
+
     constructor(private prodInfoService: ProductInfoService) {
     }
-    //card: Card = new Card('test', 'test description');
     
 }

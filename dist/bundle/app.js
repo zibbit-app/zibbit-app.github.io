@@ -870,15 +870,29 @@ var LogoComponent =
 function () {
   function LogoComponent(prodInfoService) {
     this.prodInfoService = prodInfoService;
+    this.type = ProductInfoService_1.LogoType.Normal;
+    this.hideText = false;
   }
 
   Object.defineProperty(LogoComponent.prototype, "logoUrl", {
     get: function () {
-      return this.prodInfoService.getLogoUrl();
+      return this.prodInfoService.getLogoUrl(this.type);
     },
     enumerable: true,
     configurable: true
   });
+  Object.defineProperty(LogoComponent.prototype, "ShowText", {
+    get: function () {
+      return !this.hideText && this.type !== ProductInfoService_1.LogoType.WithText;
+    },
+    enumerable: true,
+    configurable: true
+  });
+
+  __decorate([core_1.Input(), __metadata("design:type", Number)], LogoComponent.prototype, "type", void 0);
+
+  __decorate([core_1.Input(), __metadata("design:type", Boolean)], LogoComponent.prototype, "hideText", void 0);
+
   LogoComponent = __decorate([core_1.Component({
     
     //moduleId: __moduleName,
@@ -1266,6 +1280,16 @@ var Benefit_1 = __webpack_require__(551);
 
 var TutorialStep_1 = __webpack_require__(552);
 
+var LogoType;
+
+(function (LogoType) {
+  LogoType[LogoType["Normal"] = 0] = "Normal";
+  LogoType[LogoType["Light"] = 1] = "Light";
+  LogoType[LogoType["Dark"] = 2] = "Dark";
+  LogoType[LogoType["Transparent"] = 3] = "Transparent";
+  LogoType[LogoType["WithText"] = 4] = "WithText";
+})(LogoType = exports.LogoType || (exports.LogoType = {}));
+
 var ProductInfoService =
 /** @class */
 function () {
@@ -1324,12 +1348,26 @@ function () {
     return this.email;
   };
 
-  ProductInfoService.prototype.getLogoUrl = function (isDark) {
-    if (isDark === void 0) {
-      isDark = true;
+  ProductInfoService.prototype.getLogoUrl = function (logoType) {
+    if (logoType === void 0) {
+      logoType = LogoType.Normal;
     }
 
-    return this.config.getUploadsPath() + '/main/Zibbit_Logo_Dark.ico';
+    var base = this.config.getUploadsPath() + '/main/';
+
+    switch (logoType) {
+      case LogoType.Dark:
+        return base + 'Zibbit_Logo_Dark.svg';
+
+      case LogoType.Transparent:
+        return base + 'Zibbit_Logo_Trans.svg';
+
+      case LogoType.WithText:
+        return base + 'Zibbit_Logo_Stacked_Horizontal.svg';
+
+      default:
+        return base + 'Zibbit_Logo.svg';
+    }
   };
 
   ProductInfoService.prototype.getSpinnerUrl = function () {
@@ -1345,7 +1383,7 @@ function () {
 
   ProductInfoService.prototype.initializeInstallers = function () {
     var title = 'zibbit';
-    var installer1 = this.getInstaller(title, '1.0.13.0'); //new Installer(title + "_v" + version, version, url);
+    var installer1 = this.getInstaller(title, '2.0.1.0'); //new Installer(title + "_v" + version, version, url);
     //var installer1 = this.getInstaller(title, '1.0.7.0'); //new Installer(title + "_v" + version, version, url);
     // var downloadsPath = this.config.getUploadsPath() + '/macro-manager-installers';
     // var title = 'MacroManager';
@@ -2013,7 +2051,7 @@ exports.push([module.i, "html,body{width:100%;height:100%;margin:0px;padding:0px
 /***/ 556:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <pageWrapper-ui [isBusy]=\"isBusy\" [notices]=\"notices\" > -->\r\n    <div class=\"page page-downloads\">\r\n        <div class=\"page-wrapper\">\r\n            <section class=\"section-downloads\">\r\n                <div class=\"container\">\r\n                    <h1 class=\"title\">Installation</h1>\r\n                    <div class=\"content\">\r\n                        <div class=\"row\">\r\n                            <div class=\"col-12 col-md-12\">\r\n                                <div class=\"box\">\r\n                                    <h2 class=\"subtitle\">System Requirements</h2>\r\n                                    <p>Zibbit is a Microsoft Word Add-in with 2 system requirements:</p>\r\n                                    <ul>\r\n                                        <li>\r\n                                            <div>Microsoft Word (2007 or later)</div>\r\n                                        </li>\r\n                                        <li>\r\n                                            <div>Microsoft Edge WebView2 Runtime\r\n                                            (<a target=\"_blank\" href=\"https://developer.microsoft.com/en-us/microsoft-edge/webview2/\">Learn more</a> or <a href=\"https://go.microsoft.com/fwlink/p/?LinkId=2124703\">Download</a>)\r\n                                            </div>\r\n                                        </li>\r\n                                    </ul>    \r\n                                </div>\r\n                            </div>\r\n                            <div class=\"col-12 col-md-12\">\r\n                                <div class=\"box\">\r\n                                    <h2 class=\"subtitle\">Windows Installers</h2>\r\n                                    <!-- <p>Enjoy your free trial</p> -->\r\n                                    <ul class=\"installers\">\r\n                                        <li *ngFor=\"let installer of installers\">  \r\n                                            <a [href]=\"installer.downloadUrl\" download> {{installer.title}} </a>\r\n                                        </li>\r\n                                    </ul>\r\n    \r\n                                </div>\r\n                            </div>\r\n                        </div>    \r\n                    </div>\r\n                </div>\r\n            </section>  \r\n        </div>        \r\n    </div>\r\n<!-- </pageWrapper-ui> -->\r\n\r\n      \r\n";
+module.exports = "<!-- <pageWrapper-ui [isBusy]=\"isBusy\" [notices]=\"notices\" > -->\r\n    <div class=\"page page-downloads\">\r\n        <div class=\"page-wrapper\">\r\n            <section class=\"section-downloads\">\r\n                <div class=\"container\">\r\n                    <h1 class=\"title\">Installation</h1>\r\n                    <div class=\"content\">\r\n                        <div class=\"row\">\r\n                            <div class=\"col-12 col-md-12\">\r\n                                <div class=\"box\">\r\n                                    <h2 class=\"subtitle\">System Requirements</h2>\r\n                                    <p>Zibbit is a Microsoft Word Add-in with the following system requirements:</p>\r\n                                    <ul>\r\n                                        <li>\r\n                                            <div>Microsoft Word (2007 or later)</div>\r\n                                        </li>\r\n                                        <li>\r\n                                            <div>Microsoft .NET Framework (4.7.2 or later)</div>\r\n                                        </li>\r\n                                        <li>\r\n                                            <div>Microsoft Visual Studio 2010 Tools for Office Runtime (10.0.30319 or later)</div>\r\n                                        </li>\r\n                                        <li>\r\n                                            <div>Microsoft Edge WebView2 Runtime\r\n                                            (<a target=\"_blank\" href=\"https://developer.microsoft.com/en-us/microsoft-edge/webview2/\">Learn more</a> or <a href=\"https://go.microsoft.com/fwlink/p/?LinkId=2124703\">Download</a>)\r\n                                            </div>\r\n                                        </li>\r\n                                    </ul>    \r\n                                </div>\r\n                            </div>\r\n                            <div class=\"col-12 col-md-12\">\r\n                                <div class=\"box\">\r\n                                    <h2 class=\"subtitle\">Windows Installers</h2>\r\n                                    <!-- <p>Enjoy your free trial</p> -->\r\n                                    <ul class=\"installers\">\r\n                                        <li *ngFor=\"let installer of installers\">  \r\n                                            <a [href]=\"installer.downloadUrl\" download> {{installer.title}} </a>\r\n                                        </li>\r\n                                    </ul>\r\n    \r\n                                </div>\r\n                            </div>\r\n                        </div>    \r\n                    </div>\r\n                </div>\r\n            </section>  \r\n        </div>        \r\n    </div>\r\n<!-- </pageWrapper-ui> -->\r\n\r\n      \r\n";
 
 /***/ }),
 
@@ -2046,7 +2084,7 @@ exports.push([module.i, "html,body{width:100%;height:100%;margin:0px;padding:0px
 /***/ 559:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"footer-wrapper\">\r\n    <section class=\"section-footer\">\r\n        <div class='footer-content'>\r\n            <div class=\"container\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-12 col-md-8\">\r\n                        <div class=\"logo-wrapper\">\r\n                            <logo-ui></logo-ui>\r\n                            <!-- <a class='logo'>\r\n                                <img src= {{logoUrl}}>\r\n                                <h1 class=\"appName\">Zibbit</h1>\r\n                            </a>  -->\r\n                        </div>\r\n                        <p class=\"m-0\">Support</p>\r\n                        <p>{{email}}</p>\r\n                    </div>\r\n                    <div class=\"col-12 col-md-4\">\r\n                        <h3> Links </h3>\r\n                        <menu-ui class=\"footer\"></menu-ui>\r\n                    </div>\r\n                    <div class=\"col-12\">\r\n                        <p>©{{currentYear}} Zibbit. All Rights Reserved.</p>\r\n                    </div>\r\n                </div>\r\n                \r\n            </div>\r\n        </div>\r\n       \r\n    </section>\r\n  \r\n</div>\r\n\r\n\r\n";
+module.exports = "<div class=\"footer-wrapper\">\r\n    <section class=\"section-footer\">\r\n        <div class='footer-content'>\r\n            <div class=\"container\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-12 col-md-8\">\r\n                        <div class=\"logo-wrapper\">\r\n                            <!-- <logo-ui [type]='4'></logo-ui> -->\r\n                        </div>\r\n                        <p class=\"m-0\">Support</p>\r\n                        <p>{{email}}</p>\r\n                    </div>\r\n                    <div class=\"col-12 col-md-4\">\r\n                        <h3> Links </h3>\r\n                        <menu-ui class=\"footer\"></menu-ui>\r\n                    </div>\r\n                    <div class=\"col-12\">\r\n                        <p>©{{currentYear}} Zibbit. All Rights Reserved.</p>\r\n                    </div>\r\n                </div>\r\n                \r\n            </div>\r\n        </div>\r\n       \r\n    </section>\r\n  \r\n</div>\r\n\r\n\r\n";
 
 /***/ }),
 
@@ -2079,7 +2117,7 @@ exports.push([module.i, "html,body{width:100%;height:100%;margin:0px;padding:0px
 /***/ 562:
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div class=\"header-wrapper\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-12\">\r\n        \r\n                <div class='header-content' [style.justify-content]=\"(hideLogo ? 'flex-start' : 'space-between')\">\r\n                    <div *ngIf=\"!hideLogo\" class=\"logo-wrapper\">\r\n                        <a (click)=\"menuClickHandler()\" class='logo' [routerLink]=\"['/home']\">\r\n                            <img src= {{logoUrl}}>\r\n                            <h1 class=\"appName\">Zibbit</h1>\r\n                        </a> \r\n                    </div>\r\n\r\n                    <button [ngClass]=\"[mobileWrapperClass]\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapseMobileMenu\" aria-expanded=\"false\" aria-controls=\"collapseExample\">\r\n                            <i class=\"fas fa-bars\"></i>\r\n                        <!-- <span class=\"navbar-toggler-icon\"></span> -->\r\n                    </button>\r\n                    <div [ngClass]=\"[desktopWrapperClass]\">\r\n                        <menu-ui></menu-ui>\r\n                    </div>\r\n\r\n\r\n                  \r\n                </div>\r\n                <div id=\"collapseMobileMenu\" class=\"mobile-menu-wrapper collapse\">\r\n                        <menu-ui (navigationEvent)=\"menuClickHandler()\" class=\"mobile\"></menu-ui>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n   \r\n</div>\r\n\r\n";
+module.exports = "\r\n<div class=\"header-wrapper\">\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"col-12\">\r\n        \r\n                <div class='header-content' [style.justify-content]=\"(hideLogo ? 'flex-start' : 'space-between')\">\r\n                    <div *ngIf=\"!hideLogo\" class=\"logo-wrapper\">\r\n                        <a (click)=\"menuClickHandler()\" class='logo' [routerLink]=\"['/home']\">\r\n                            <logo-ui [type]='0' [hideText]=true></logo-ui>\r\n                            <!-- <img src= {{logoUrl}}> -->\r\n                        </a> \r\n                    </div>\r\n\r\n                    <button [ngClass]=\"[mobileWrapperClass]\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapseMobileMenu\" aria-expanded=\"false\" aria-controls=\"collapseExample\">\r\n                            <i class=\"fas fa-bars\"></i>\r\n                        <!-- <span class=\"navbar-toggler-icon\"></span> -->\r\n                    </button>\r\n                    <div [ngClass]=\"[desktopWrapperClass]\">\r\n                        <menu-ui></menu-ui>\r\n                    </div>\r\n\r\n\r\n                  \r\n                </div>\r\n                <div id=\"collapseMobileMenu\" class=\"mobile-menu-wrapper collapse\">\r\n                        <menu-ui (navigationEvent)=\"menuClickHandler()\" class=\"mobile\"></menu-ui>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n   \r\n</div>\r\n\r\n";
 
 /***/ }),
 
@@ -2103,7 +2141,7 @@ module.exports = "\r\n<div class=\"header-wrapper\">\r\n    <div class=\"contain
 
 exports = module.exports = __webpack_require__(23)(false);
 // Module
-exports.push([module.i, "html,body{width:100%;height:100%;margin:0px;padding:0px;font-size:14px}section{padding:50px 0px}.my-close:before,.severity-info-symbol:before,.severity-slow-symbol:before{font-family:\"Font Awesome 5 Free\";vertical-align:middle;font-weight:900;font-size:30px;font-style:normal}.my-close{cursor:pointer}.my-close:before{font-size:25px;content:\"\\f057\"}.severity-info-symbol:before,.severity-slow-symbol:before{line-height:50px;font-size:50px}.severity-info-symbol:before{content:\"\\f05a\"}.severity-slow-symbol:before{content:\"\\f252\"}.title{font-size:30px}.title{margin-bottom:10px}img{width:100%;height:auto}.btn-base,.btn-dark,.btn-light{cursor:pointer;text-decoration:none;font-weight:500;transition:background-color 0.3s;display:inline-block;padding:5px 20px}.btn-dark{color:#fff !important;border:2px solid #fff;background:transparent}.btn-dark:hover{background-color:#fff;color:#2e302b !important}.btn-light{color:#2e302b;border:1px solid #2e302b;background-color:#f4f4f4}.btn-light:hover{background-color:#2e302b;color:#fff !important}.numberWrapper{display:flex;align-items:center}.numberWrapper-top{display:flex;align-items:flex-start}.number{margin-right:10px;display:flex;align-items:center;justify-content:center;height:35px;width:35px;color:white;background-color:rgba(3,87,98,0.85098);border-radius:50%;flex-shrink:0}.header-wrapper{width:100%;z-index:100;background-color:#fff;box-shadow:0px 0px 9px 3px rgba(41,41,41,0.25)}.header-wrapper .header-content{display:flex;justify-content:space-between;align-items:center;padding:5px 0px}.header-wrapper .header-content .logo-wrapper{margin-bottom:10px;text-align:center;max-width:50px;max-width:50px}.header-wrapper .header-content .logo-wrapper .logo{color:#2e302b;font-size:30px;text-decoration:none}.header-wrapper .header-content .logo-wrapper img{margin:0px -25px}.header-wrapper .header-content .appName{text-align:center;padding:0px;margin:0px;margin-top:-5px;font-size:18px}.header-wrapper .header-content .btn-menu{padding:10px;background-color:#2e302b;color:#fff;border-width:0px;outline:none}.header-wrapper .header-content .btn-menu i{font-size:20px}.header-wrapper .header-content .btn-menu:focus{outline-width:0;outline:none;box-shadow:none}\n", ""]);
+exports.push([module.i, "html,body{width:100%;height:100%;margin:0px;padding:0px;font-size:14px}section{padding:50px 0px}.my-close:before,.severity-info-symbol:before,.severity-slow-symbol:before{font-family:\"Font Awesome 5 Free\";vertical-align:middle;font-weight:900;font-size:30px;font-style:normal}.my-close{cursor:pointer}.my-close:before{font-size:25px;content:\"\\f057\"}.severity-info-symbol:before,.severity-slow-symbol:before{line-height:50px;font-size:50px}.severity-info-symbol:before{content:\"\\f05a\"}.severity-slow-symbol:before{content:\"\\f252\"}.title{font-size:30px}.title{margin-bottom:10px}img{width:100%;height:auto}.btn-base,.btn-dark,.btn-light{cursor:pointer;text-decoration:none;font-weight:500;transition:background-color 0.3s;display:inline-block;padding:5px 20px}.btn-dark{color:#fff !important;border:2px solid #fff;background:transparent}.btn-dark:hover{background-color:#fff;color:#2e302b !important}.btn-light{color:#2e302b;border:1px solid #2e302b;background-color:#f4f4f4}.btn-light:hover{background-color:#2e302b;color:#fff !important}.numberWrapper{display:flex;align-items:center}.numberWrapper-top{display:flex;align-items:flex-start}.number{margin-right:10px;display:flex;align-items:center;justify-content:center;height:35px;width:35px;color:white;background-color:rgba(3,87,98,0.85098);border-radius:50%;flex-shrink:0}.header-wrapper{width:100%;z-index:100;background-color:#fff;box-shadow:0px 0px 9px 3px rgba(41,41,41,0.25)}.header-wrapper .header-content{display:flex;justify-content:space-between;align-items:center;padding:5px 0px}.header-wrapper .header-content .appName{text-align:center;padding:0px;margin:0px;margin-top:-5px;font-size:18px}.header-wrapper .header-content .btn-menu{padding:10px;background-color:#2e302b;color:#fff;border-width:0px;outline:none}.header-wrapper .header-content .btn-menu i{font-size:20px}.header-wrapper .header-content .btn-menu:focus{outline-width:0;outline:none;box-shadow:none}\n", ""]);
 
 
 
@@ -2178,7 +2216,7 @@ exports.push([module.i, "html,body{width:100%;height:100%;margin:0px;padding:0px
 /***/ 571:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"logo-wrapper\">\r\n    <div class='logo'>\r\n        <i class=\"fas fa-frog\"></i>\r\n        <!-- <img src= {{logoUrl}}> -->\r\n        <h1 class=\"appName\">Zibbit</h1>\r\n    </div> \r\n</div>\r\n";
+module.exports = "<div class=\"logo-wrapper {{(type === 4) ? 'set-width' : ''}}\">\r\n    <div class='logo'>\r\n        <!-- <i class=\"fas fa-frog\"></i> -->\r\n        <img src= {{logoUrl}}>\r\n        <h1 *ngIf=\"ShowText\" class=\"appName\">Zibbit</h1>\r\n    </div> \r\n</div>\r\n";
 
 /***/ }),
 
@@ -2202,7 +2240,7 @@ module.exports = "<div class=\"logo-wrapper\">\r\n    <div class='logo'>\r\n    
 
 exports = module.exports = __webpack_require__(23)(false);
 // Module
-exports.push([module.i, "html,body{width:100%;height:100%;margin:0px;padding:0px;font-size:14px}section{padding:50px 0px}.my-close:before,.severity-info-symbol:before,.severity-slow-symbol:before{font-family:\"Font Awesome 5 Free\";vertical-align:middle;font-weight:900;font-size:30px;font-style:normal}.my-close{cursor:pointer}.my-close:before{font-size:25px;content:\"\\f057\"}.severity-info-symbol:before,.severity-slow-symbol:before{line-height:50px;font-size:50px}.severity-info-symbol:before{content:\"\\f05a\"}.severity-slow-symbol:before{content:\"\\f252\"}.title{font-size:30px}.title{margin-bottom:10px}img{width:100%;height:auto}.btn-base,.btn-dark,.btn-light{cursor:pointer;text-decoration:none;font-weight:500;transition:background-color 0.3s;display:inline-block;padding:5px 20px}.btn-dark{color:#fff !important;border:2px solid #fff;background:transparent}.btn-dark:hover{background-color:#fff;color:#2e302b !important}.btn-light{color:#2e302b;border:1px solid #2e302b;background-color:#f4f4f4}.btn-light:hover{background-color:#2e302b;color:#fff !important}.numberWrapper{display:flex;align-items:center}.numberWrapper-top{display:flex;align-items:flex-start}.number{margin-right:10px;display:flex;align-items:center;justify-content:center;height:35px;width:35px;color:white;background-color:rgba(3,87,98,0.85098);border-radius:50%;flex-shrink:0}.logo-wrapper{text-align:center}.logo{font-size:30px;text-decoration:none}.logo img{margin-bottom:-10px}.logo .fa-frog{margin-bottom:-5px;font-size:70px}.logo .appName{margin:0px;font-size:30px}\n", ""]);
+exports.push([module.i, "html,body{width:100%;height:100%;margin:0px;padding:0px;font-size:14px}section{padding:50px 0px}.my-close:before,.severity-info-symbol:before,.severity-slow-symbol:before{font-family:\"Font Awesome 5 Free\";vertical-align:middle;font-weight:900;font-size:30px;font-style:normal}.my-close{cursor:pointer}.my-close:before{font-size:25px;content:\"\\f057\"}.severity-info-symbol:before,.severity-slow-symbol:before{line-height:50px;font-size:50px}.severity-info-symbol:before{content:\"\\f05a\"}.severity-slow-symbol:before{content:\"\\f252\"}.title{font-size:30px}.title{margin-bottom:10px}img{width:100%;height:auto}.btn-base,.btn-dark,.btn-light{cursor:pointer;text-decoration:none;font-weight:500;transition:background-color 0.3s;display:inline-block;padding:5px 20px}.btn-dark{color:#fff !important;border:2px solid #fff;background:transparent}.btn-dark:hover{background-color:#fff;color:#2e302b !important}.btn-light{color:#2e302b;border:1px solid #2e302b;background-color:#f4f4f4}.btn-light:hover{background-color:#2e302b;color:#fff !important}.numberWrapper{display:flex;align-items:center}.numberWrapper-top{display:flex;align-items:flex-start}.number{margin-right:10px;display:flex;align-items:center;justify-content:center;height:35px;width:35px;color:white;background-color:rgba(3,87,98,0.85098);border-radius:50%;flex-shrink:0}.logo-wrapper{text-align:center}.set-width{width:200px}.logo .appName{margin:0px;font-size:28px;letter-spacing:2.5px}\n", ""]);
 
 
 
