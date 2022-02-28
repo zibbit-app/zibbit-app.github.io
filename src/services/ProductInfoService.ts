@@ -62,6 +62,7 @@ export class ProductInfoService {
       var exhibitBen = new Benefit("Exhibits");
       exhibitBen.icon = "far fa-folder";
       exhibitBen.items.push("Add, remove, and re-order");
+      exhibitBen.items.push("Supports pdf and docx files");
       exhibitBen.items.push("Document preview");
 
       var refBen = new Benefit("References");

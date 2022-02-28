@@ -1321,6 +1321,7 @@ function () {
     var exhibitBen = new Benefit_1.Benefit("Exhibits");
     exhibitBen.icon = "far fa-folder";
     exhibitBen.items.push("Add, remove, and re-order");
+    exhibitBen.items.push("Supports pdf and docx files");
     exhibitBen.items.push("Document preview");
     var refBen = new Benefit_1.Benefit("References");
     refBen.icon = "fas fa-link";
