@@ -8,6 +8,19 @@
                         <div class="row">
                             <div class="col-12 col-md-12">
                                 <div class="box">
+                                    <h2 class="subtitle">Windows Installers</h2>
+                                    <!-- <p>Enjoy your free trial</p> -->
+                                    <ul class="installers">
+                                        <li *ngFor="let installer of installers">  
+                                            <a [href]="installer.downloadUrl" download> {{installer.title}} </a>
+                                        </li>
+                                    </ul>
+    
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-12">
+                                <div class="box">
                                     <h2 class="subtitle">System Requirements</h2>
                                     <p>Zibbit is a Microsoft Word Add-in with the following system requirements:</p>
                                     <ul>
@@ -26,18 +39,6 @@
                                             </div>
                                         </li>
                                     </ul>    
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-12">
-                                <div class="box">
-                                    <h2 class="subtitle">Windows Installers</h2>
-                                    <!-- <p>Enjoy your free trial</p> -->
-                                    <ul class="installers">
-                                        <li *ngFor="let installer of installers">  
-                                            <a [href]="installer.downloadUrl" download> {{installer.title}} </a>
-                                        </li>
-                                    </ul>
-    
                                 </div>
                             </div>
                         </div>    

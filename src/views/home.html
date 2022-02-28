@@ -220,143 +220,149 @@
                 <p>Case Study: Affidavit</p>    
             </div>
             <div class="container">
-                <div class="step">
-                    <div class="row">  
-                        <div class="col-12 col-md-6 order-2">
-                            <div class="exhibits">
-                                <div class="stepFigure">
-                                    <p class="subtitle">Exhibits</p>
-                                    <ul class="pdf-collection">
-                                        <li class="pdf" *ngFor="let exhibit of exhibits">
-                                            <i class="far fa-file-pdf"></i>
-                                            <p>{{exhibit}}.pdf</p>
-                                        </li>
-                                    </ul>
+                <div class="row">
+                    <div class="col-12 col-lg-4">
+                        <div class="step">
+                            <div class="row">  
+                                <div class="col-12 col-md-7 col-lg-12 order-2">
+                                    <div class="exhibits">
+                                        <div class="stepFigure">
+                                            <p class="subtitle">Exhibits</p>
+                                            <ul class="pdf-collection">
+                                                <li class="pdf" *ngFor="let exhibit of exhibits">
+                                                    <i class="far fa-file-pdf"></i>
+                                                    <p>{{exhibit}}.pdf</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>    
+                                </div>
+                                <div class="col-12 col-md-5 col-lg-12">
+                                    <div class="stepSummary">
+                                        <div class="numberWrapper">
+                                            <div class="number">1</div>
+                                            <h2 class="subtitle">Import Exhibits</h2>    
+                                        </div>     
+                                        <!-- <ul >
+                                            <li>Import a folder of Exhibits</li>
+                                        </ul>     -->
+                                    </div>
                                 </div>
                             </div>    
                         </div>
-                        <div class="col-12 col-md-6">
-                            <div class="stepSummary">
-                                <div class="numberWrapper">
-                                    <div class="number">1</div>
-                                    <h2 class="subtitle">Import Exhibits</h2>    
-                                </div>     
-                                <ul >
-                                    <li>Exhibits can be added, removed, and re-ordered at any time</li>
-                                    <li>After an exhibit has been added it can be referenced throughout your document</li>
-                                </ul>    
-                            </div>
-                        </div>
-                    </div>    
-                </div>
-                <div class="step">
-                    <div class="row">
-                        <div class="col-12 col-md-6 order-2 order-sm-1">
-                            <div class="stepFigure">
-                                <div class="references">
-                                    <div class="word-wrapper">
-                                        <ribbon-ui [docTitle]="'Affidavit'" [showTabs]="false" [showRibbon]="false"></ribbon-ui>
-                                        <div class="body">
-                                            <div class="page-wrapper">
-                                                <doc-lines-ui></doc-lines-ui>
-                                            </div>
-                                            <div class="zibbit-pane">
-                                                <div class="header">
-                                                    <h3>Zibbit</h3>
-                                                </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="step">
+                            <div class="row">
+                                <div class="col-12 col-md-7 col-lg-12 order-2 order-sm-2">
+                                    <div class="stepFigure">
+                                        <div class="references">
+                                            <div class="word-wrapper">
+                                                <ribbon-ui [docTitle]="'Affidavit'" [showTabs]="false" [showRibbon]="false"></ribbon-ui>
                                                 <div class="body">
-                                                    <ul>
-                                                        <li *ngFor="let exhibit of exhibits; let i = index"><p>{{i + 1}}. {{exhibit}}</p></li>
-                                                    </ul>
-                                                    <div class="insert">
-                                                        <p>Insert</p>
+                                                    <div class="page-wrapper">
+                                                        <doc-lines-ui></doc-lines-ui>
+                                                    </div>
+                                                    <div class="zibbit-pane">
+                                                        <div class="header">
+                                                            <h3>Zibbit</h3>
+                                                        </div>
+                                                        <div class="body">
+                                                            <ul>
+                                                                <li *ngFor="let exhibit of exhibits; let i = index"><p>{{i + 1}}. {{exhibit}}</p></li>
+                                                            </ul>
+                                                            <div class="insert">
+                                                                <p>Insert</p>
+                                                            </div>   
+                                                        </div>
                                                     </div>   
                                                 </div>
-                                            </div>   
+                                                <div class="footer"></div>
+                                            </div>
                                         </div>
-                                        <div class="footer"></div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 order-sm-2">
-                            <div class="stepSummary">
-                                <div class="numberWrapper">
-                                    <div class="number">2</div>
-                                    <h2 class="subtitle">Reference Exhibits</h2>    
-                                </div>
-                                <ul >
-                                    <li>References can hyperlink to exhibits in your appendix</li>
-                                    <li>Reference labels are fully customizable</li>
-                                </ul>    
-                            </div>
+                                <div class="col-12 col-md-5 col-lg-12 order-sm-1">
+                                    <div class="stepSummary">
+                                        <div class="numberWrapper">
+                                            <div class="number">2</div>
+                                            <h2 class="subtitle">Reference Exhibits</h2>    
+                                        </div>
+                                        <!-- <ul>
+                                            <li>Insert references to your exhibits</li>
+                                        </ul>     -->
+                                    </div>
 
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="step">
-                    <div class="row">
-                        <div class="col-12 col-md-6 order-2">
-                            <div class="stepFigure">
-                                <div class="publish">
-                                    <div class="pdf-wrapper">
-                                        <div class="pdf-header titleBar">
-                                            <div class="item">PDF - Affidavit</div>
-                                            <!-- <div class="openPdf">
-                                                <a class="sample" [href]="pdfUrl" target="_blank">Open</a>
-                                            </div> -->
-                                        </div>
-                                        <div class="body">
-                                            <div class="bookmarks">
-                                                <div class="subtitle">Bookmarks</div>
-                                                <ul>
-                                                    <li>
-                                                        <i class="far fa-bookmark"></i>
-                                                        <p>Affidavit</p>
-                                                    </li>
-                                                    <li *ngFor="let exhibit of exhibits; let i = index">
-                                                        <i class="far fa-bookmark"></i>
-                                                        <p>Exhibit {{i + 1}} - {{exhibit}}</p>
-                                                    </li>
-                                                </ul>            
-        
-                                            </div>
-        
-                                            <div class="page-wrapper">
-                                                <doc-lines-ui></doc-lines-ui>
-                                                <div class="appendix-wrapper">
-                                                    <p class="subtitle">Appendix</p>
-        
-                                                    <div class="appendix">
+                    <div class="col-12 col-lg-4">
+                        <div class="step">
+                            <div class="row">
+                                <div class="col-12 col-md-7 col-lg-12 order-2">
+                                    <div class="stepFigure">
+                                        <div class="publish">
+                                            <div class="pdf-wrapper">
+                                                <div class="pdf-header titleBar">
+                                                    <div class="item">PDF - Affidavit</div>
+                                                    <!-- <div class="openPdf">
+                                                        <a class="sample" [href]="pdfUrl" target="_blank">Open</a>
+                                                    </div> -->
+                                                </div>
+                                                <div class="body">
+                                                    <div class="bookmarks">
+                                                        <div class="subtitle">Bookmarks</div>
                                                         <ul>
-                                                            <li *ngFor="let exhibit of exhibits; let i = index">
-                                                                <i class="far fa-file-pdf"></i>
-                                                                <p>Exhibit {{i + 1}}</p>
+                                                            <li>
+                                                                <i class="far fa-bookmark"></i>
+                                                                <p>Affidavit</p>
                                                             </li>
-                                                        </ul>       
+                                                            <li *ngFor="let exhibit of exhibits; let i = index">
+                                                                <i class="far fa-bookmark"></i>
+                                                                <p>Exhibit {{i + 1}} - {{exhibit}}</p>
+                                                            </li>
+                                                        </ul>            
+                
+                                                    </div>
+                
+                                                    <div class="page-wrapper">
+                                                        <doc-lines-ui></doc-lines-ui>
+                                                        <div class="appendix-wrapper">
+                                                            <p class="subtitle">Appendix</p>
+                
+                                                            <div class="appendix">
+                                                                <ul>
+                                                                    <li *ngFor="let exhibit of exhibits; let i = index">
+                                                                        <i class="far fa-file-pdf"></i>
+                                                                        <p>Exhibit {{i + 1}}</p>
+                                                                    </li>
+                                                                </ul>       
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>    
                                     </div>
-                                </div>    
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="stepSummary">
-                                <div class="numberWrapper">
-                                    <div class="number">3</div>
-                                    <h2 class="subtitle">Publish PDF</h2>    
                                 </div>
-                                <ul>
-                                    <li>Generate a PDF <a class="sample" [href]="pdfUrl" target="_blank">(Affidavit.pdf)</a> document with an appendix of exhibits</li>
-                                    <li>Create PDF bookmarks</li>
-                                </ul>    
-                            </div>
+                                <div class="col-12 col-md-5 col-lg-12">
+                                    <div class="stepSummary">
+                                        <div class="numberWrapper">
+                                            <div class="number">3</div>
+                                            <h2 class="subtitle">Publish PDF</h2>    
+                                        </div>
+                                        <!-- <ul>
+                                            <li>Generate a PDF <a class="sample" [href]="pdfUrl" target="_blank">(Affidavit.pdf)</a> document with an appendix of exhibits</li>
+                                        </ul>     -->
+                                    </div>
 
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
         <section class="glance">

@@ -10,6 +10,11 @@
 }
 
 .section-intro{
+    //background: $zibbitTheme;
+    & > .row{
+        max-width: 2000px;
+        margin: 0px auto;    
+    }
 
     .intro-wrapper{
         // box-shadow: $boxShadowHeavy;
@@ -311,6 +316,7 @@
 
     .window-height{
         height: 100vh;
+        max-height: 850px;
     }
 
     .prod-wrapper{
@@ -557,7 +563,7 @@
 
 
     .step{
-        max-width: 700px;
+        max-width: 650px;
         //background: white;
         //padding: 50px;
         // display: flex;
@@ -593,11 +599,12 @@
         }
     
         .stepSummary{
-            box-shadow: $boxShadowHeavy;
-            background: $white;
-            border-radius: 5%;
+            //box-shadow: $boxShadowHeavy;
+            //background: $white;
+            //border-radius: 5%;
             //max-width: 300px;
             //margin: 20px;
+            color: white;
             padding: 20px;
  
             ul{
@@ -608,6 +615,18 @@
                     margin-left: 30px;
                     margin-top: 20px;
                 }
+            }
+
+            .numberWrapper{
+                .number{
+                    background: white;
+                    color: $zibbitThemeDark;
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+                // .subtitle{
+                //     margin: 10px 0px;
+                // }
             }
 
         
