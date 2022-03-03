@@ -1,6 +1,6 @@
 import {Component} from "@angular/core"
 import { AppConfig } from '../utilities/AppConfig';
-//import { AppConfig } from "utilities/AppConfig";
+import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
 import {Card} from "../models/Card"
 import {ProductInfoService} from "../services/ProductInfoService";
 import { Benefit } from "../models/Benefit";
@@ -14,7 +14,7 @@ import { Benefit } from "../models/Benefit";
     styleUrls: ["../assets/styles/home.scss"]
 })
 export class HomeComponent {
-    constructor(private prodInfoService: ProductInfoService) { }
+    constructor(private prodInfoService: ProductInfoService, private _sanitizer: DomSanitizer) { }
     public cards: Card[];
     public slideUrls: string[];
     public imageDir: string;
@@ -30,6 +30,10 @@ export class HomeComponent {
         let imgs = this.prodInfoService.imageUrlDict;
         return imgs;
     }
+
+    get demoLink(): any{
+        const link = this.prodInfoService.demoLink;
+        return this._sanitizer.bypassSecurityTrustResourceUrl(link);    }
 
     private menuClickHandler(): void {
         var menu = document.getElementById('collapseMobileMenu');
@@ -66,7 +70,6 @@ export class HomeComponent {
         this.benefits = this.prodInfoService.getBenefits();
         this.summaryBenefit = this.prodInfoService.getSummaryBenefit();
         this.pdfUrl = this.config.getUploadsPath() + '/samplePdfs/sample_affidavit.pdf';
-
     }
 
     

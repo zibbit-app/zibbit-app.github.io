@@ -26,6 +26,7 @@ export class ProductInfoService {
     private productName: string;
     private logoUrl: string;
     private email: string;
+    private videoLink: string;
     private imageUrls: string[];
     private cards: Card[];
     private installers: Installer[];
@@ -36,9 +37,14 @@ export class ProductInfoService {
       this.config = new AppConfig;
       this.productName = "Zibbit";
       this.email = "zibbit.info@gmail.com";
+      this.videoLink = "https://www.youtube.com/embed/lDN4DUzBzBE";
       this.imageUrls = this.initializeImages();
       this.cards = this.initializeCards();
       this.installers = this.initializeInstallers();
+    }
+
+    public get demoLink(): string{
+      return this.videoLink;
     }
 
     public getSummaryBenefit(): Benefit{
