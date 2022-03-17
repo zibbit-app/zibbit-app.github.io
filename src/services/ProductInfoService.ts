@@ -37,7 +37,7 @@ export class ProductInfoService {
       this.config = new AppConfig;
       this.productName = "Zibbit";
       this.email = "zibbit.info@gmail.com";
-      this.videoLink = "https://www.youtube.com/embed/lDN4DUzBzBE";
+      this.videoLink = "https://www.youtube.com/embed/9xOsHfcYgy0";
       this.imageUrls = this.initializeImages();
       this.cards = this.initializeCards();
       this.installers = this.initializeInstallers();
