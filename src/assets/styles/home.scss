@@ -381,6 +381,7 @@
         //max-width: 300px;
     }
     .wrapper{
+        padding: 20px;
         max-width: 700px;
         margin-top: 20px;
         //background: $zibbitTheme;
@@ -635,6 +636,7 @@
         @media (max-width: $md) { 
             margin-top: 100px;
             .stepSummary{
+                padding: 0px;
                 ul{
                     list-style: none;
                     li{
@@ -647,6 +649,7 @@
                 margin-top: 20px;
             }
             .numberWrapper{
+                margin: 0px;
                 flex-direction: column;
                 .subtitle{
                     margin: 10px 0px;
@@ -908,6 +911,11 @@
     }
     .vid-wrapper{
         text-align: center;
+        iframe{
+            width: 100%;
+            height: 315px;
+            max-width: 560px;
+        }
     }
 }
 .getStarted{
