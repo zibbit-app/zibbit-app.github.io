@@ -16,6 +16,14 @@ export class DownloadsComponent {
     constructor(private prodInfoService: ProductInfoService) { }
     public installers: Installer[];
 
+    get latest(): Installer {
+        return this.installers[0];
+    }
+    
+    get images(): Map<string,string>{
+        let imgs = this.prodInfoService.imageUrlDict;
+        return imgs;
+    }
 
     ngOnInit() {
         this.setDownloads();

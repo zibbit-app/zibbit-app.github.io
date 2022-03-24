@@ -296,6 +296,9 @@ export class ProductInfoService {
       urlMap.set("icon-style", this.getImage('icons/brush.png'));
       urlMap.set("icon-publish", this.getImage('icons/publish.png'));
 
+      urlMap.set("smartScreen", this.config.getUploadsPath() + '/other/SmartScreen.PNG');
+      urlMap.set("smartScreen-runanyway", this.config.getUploadsPath() + '/other/SmartScreen Run anyway.PNG');
+
 
       return urlMap;
     }
