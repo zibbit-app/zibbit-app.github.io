@@ -860,9 +860,11 @@
         border-top: 0px;
         min-width: 105px;
         .header{
+            // color: $white;
+            // background: $zibbitTheme;
             color: slategray;
-            padding: 5px;
             background: $msRibbonGrey;
+            padding: 5px;
             h3{
                 font-size: 15px;
                 margin: 0px;
