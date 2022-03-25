@@ -65,7 +65,7 @@
 
         .subtitle{
             //padding: 20px;
-
+            font-size:  2rem;
             color: white;
             //margin-bottom: 30px;
             font-weight: 100;
@@ -451,7 +451,7 @@
                 }
                 .feature{
                     h2{
-                        font-size: 20px;
+                        //font-size: 20px;
                         // margin-left: 0px;
                         margin-bottom: 0px;
                     }
@@ -530,6 +530,9 @@
             }
             & > h2{
                 font-weight: normal;
+            }
+            .subtitle{
+                font-size: 16px;
             }
         }
         .btn-bar{

@@ -1,74 +1,30 @@
 @import 'global';
 @import 'page';
 
-:host{
-    // background: $zibbitThemeLight;
 
-    &, pageWrapper-ui{
-        display: flex;
-        width: 100%;
-    }
-}
-.page-downloads{
-    &{
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        .content{
-            margin-top: 50px;
+.section-downloads{
+    background: $zibbitTheme;
+    .banner{
+        .title, .subtitle{
+            color: $white;
+            
         }
-        .box{
-            padding: 20px 0px;
-        }
-    
-    }
-
-    .title{
         text-align: center;
-        color: $zibbitTheme;
-    }
-    .subtitle{
-        font-size: 20px;
-        color: $zibbitTheme;
-
-        //text-decoration: underline;
-    }
-
-    p{
-        max-width: 700px;
-    }
-
-    .installers{
-        li{
-            .item-wrapper{
-                vertical-align: middle;
-
-                & > *{
-                    display: inline-block;
-                    
-                }
-                // display: flex;
-                // align-items: center;
-            }
-        }
+        justify-content: center;
         a{
-            color: #007bff;
-            cursor: pointer;
-            margin-right: 5px;
-        }
-        .img-wrapper{
-            height: 20px !important;
-        }
-    }
-
-    .note{
-        //font-size: 12px;
-
-        .imgWrapper{
-            max-width: 400px;
             margin-top: 20px;
         }
     }
 
+}
 
+.section-info{
+    .subtitle{
+        color: $zibbitTheme;
+    }
+    .imgWrapper{
+        max-width: 400px;
+        margin-top: 20px;
+    }
+    
 }

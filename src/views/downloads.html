@@ -1,87 +1,62 @@
-<!-- <pageWrapper-ui [isBusy]="isBusy" [notices]="notices" > -->
-    <div class="page page-downloads">
-        <div class="page-wrapper">
-            <section class="section-downloads">
-                <div class="container">
-                        <div class="row">
-                            <div class="col-12 col-md-6">
-                                <!-- <h1 class="title">Download</h1> -->
-                                
-                                    <!-- <div class="col-12 col-md-8"> -->
-                                        <!-- <div class="box">
-                                            <h2 class="subtitle">Windows Installers</h2>
-                                            <div class="installers">
-                                                <div *ngFor="let installer of installers">
-                                                    <a class="btn-light"  [href]="installer.downloadUrl" download>{{installer.title}}</a>
-                                                </div>
-                                            </div>
-                                        </div> -->
-                                    <!-- </div> -->
-
-                                    <div class="box">
-                                        <h2 class="subtitle">Installation</h2>
-                                        <ol>
-                                            <li>
-                                                Download the installer                                                     
-                                                <a class="btn-light"  [href]="latest.downloadUrl" download>{{latest.title}}</a>
-                                            </li>
-
-                                            <li>
-                                                Run the installer to launch the setup process
-                                            </li>
-                                            <li>
-                                                Complete the setup process 
-                                            </li>
-                                        </ol>
-                                    </div>
-
-                                    <div class="box">
-                                        <h2 class="subtitle">Microsoft Defender SmartScreen</h2>
-                                        <p>SmartScreen protects against malicious files from the internet. <a target="_blank" href="https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview">Learn more.</a></p>
-                                        <ul class="note">
-                                            <li>It considers many factors including "Reputation".</li>
-                                            <li>While the reputation associated with Zibbit is growing, you may see the SmartScreen prompt.</li>
-                                            <li>To continue the installation: click "More info" and then "Run anyway".</li>
-                                            <div class="imgWrapper">
-                                                <img [src]="images.get('smartScreen')"/>
-                                            </div>
-                                            <div class="imgWrapper">
-                                                <img [src]="images.get('smartScreen-runanyway')"/>
-                                            </div>
-
-                                        </ul>
-                                    </div>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <div class="box">
-                                    <h2 class="subtitle">System Requirements</h2>
-                                    <p>Zibbit is a Microsoft Word Add-in with the following system requirements:</p>
-                                    <ul>
-                                        <li>
-                                            <div>Windows Operating System</div>
-                                        </li>
-                                        <li>
-                                            <div>Microsoft Word (2007 or later)</div>
-                                        </li>
-                                        <li>
-                                            <div>Microsoft .NET Framework (4.7.2 or later)</div>
-                                        </li>
-                                        <li>
-                                            <div>Microsoft Visual Studio 2010 Tools for Office Runtime (10.0.30319 or later)</div>
-                                        </li>
-                                        <li>
-                                            <div>Microsoft Edge WebView2 Runtime
-                                            (<a target="_blank" href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/">Learn more</a> or <a href="https://go.microsoft.com/fwlink/p/?LinkId=2124703">Download</a>)
-                                            </div>
-                                        </li>
-                                    </ul>    
-                                </div>
-                            </div>
-                        </div>    
+<div class="page page-downloads">
+    <section class="section-downloads">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="banner">
+                        <h1 class="title">Download</h1>
+                        <!-- <div class="subtitle">Enjoy your free trial</div> -->
+                        <div>
+                            <a class="btn-dark"  [href]="latest.downloadUrl" download>{{latest.title}}</a>
+                        </div>
                     </div>
-            </section>  
-        </div>        
-    </div>
-<!-- </pageWrapper-ui> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h2 class="subtitle">Installation Note</h2>
+                    <p>Microsoft Defender SmartScreen may advise caution.</p>
+                    <ul>
+                        <li>This can happen with new software while it builds "Reputation". <a target="_blank" href="https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview">Learn more.</a></li>
+                        <li>To continue the installation: click "More info" and then "Run anyway".</li>
+                    </ul>
+                    <div class="imgWrapper">
+                        <img [src]="images.get('smartScreen')"/>
+                    </div>
+                    <div class="imgWrapper">
+                        <img [src]="images.get('smartScreen-runanyway')"/>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h2 class="subtitle">System Requirements</h2>
+                    <p>Zibbit is a Microsoft Word Add-in with the following system requirements:</p>
+                    <ul>
+                        <li>
+                            <div>Windows Operating System</div>
+                        </li>
+                        <li>
+                            <div>Microsoft Word (2007 or later)</div>
+                        </li>
+                        <li>
+                            <div>Microsoft .NET Framework (4.7.2 or later)</div>
+                        </li>
+                        <li>
+                            <div>Microsoft Visual Studio 2010 Tools for Office Runtime (10.0.30319 or later)</div>
+                        </li>
+                        <li>
+                            <div>Microsoft Edge WebView2 Runtime
+                            (<a target="_blank" href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/">Learn more</a> or <a href="https://go.microsoft.com/fwlink/p/?LinkId=2124703">Download</a>)
+                            </div>
+                        </li>
+                    </ul>    
+                </div>
+            </div>
+        </div>
+    </section>  
+</div>
 
       
