@@ -1,3 +1,4 @@
+import { PrivacyComponent } from './../components/PrivacyComponent';
 import {Component} from '@angular/core';
 
 //import {CustomerComponent} from '../components/CustomerComponent';
@@ -8,6 +9,7 @@ import {DownloadsComponent} from "../components/DownloadsComponent";
 //import {WelcomeComponent} from "../Component/WelcomeComponent";
 
 export const ApplicationRoutes = [
+    { path: 'privacy', component: PrivacyComponent  },
     { path: 'downloads', component: DownloadsComponent },
     { path: 'learn', component: LearnComponent },
     { path: 'home', component: HomeComponent  },

@@ -1,0 +1,30 @@
+@import 'global';
+@import 'page';
+
+
+.section-downloads{
+    background: $zibbitTheme;
+    .banner{
+        .title, .subtitle{
+            color: $white;
+            
+        }
+        text-align: center;
+        justify-content: center;
+        a{
+            margin-top: 20px;
+        }
+    }
+
+}
+
+.section-info{
+    .subtitle{
+        color: $zibbitTheme;
+    }
+    .imgWrapper{
+        max-width: 400px;
+        margin-top: 20px;
+    }
+    
+}

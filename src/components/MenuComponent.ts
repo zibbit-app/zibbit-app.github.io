@@ -1,3 +1,4 @@
+import { Input } from '@angular/core';
 //import {Customer} from '../models/Customer'
 import {Component, Output, EventEmitter} from "@angular/core"
 
@@ -9,6 +10,7 @@ import {Component, Output, EventEmitter} from "@angular/core"
     styleUrls: ["../assets/styles/menu.scss"]
 })
 export class MenuComponent {
+    @Input() fullMenu: boolean = false;
     @Output() navigationEvent = new EventEmitter();
     notifyNavigationOccured(event) {
         var destination = event.target.text;
