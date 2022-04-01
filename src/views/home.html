@@ -24,7 +24,7 @@
 
                             <div class="btn-bar">
                                 <!-- <i class="fas fa-chevron-down d-block d-md-none"></i> -->
-                                <a (click)="scroll('product-section')" class="btn-dark btn-getStarted">Learn More</a>
+                                <a (click)="scroll('section-vid')" class="btn-dark btn-getStarted">Learn More</a>
                                 <a class="btn-dark btn-getStarted" routerLink='/learn'>Get Started</a>        
 
                                 <!-- <a class="btn-dark btn-download d-none d-md-inline-block" routerLink='/downloads'>Download</a>             -->
@@ -91,7 +91,7 @@
                                 <div class="footer"></div>
                             </div> -->
 
-                        <div [ngStyle]="style()" class="product-wrapper window-height">
+                        <div [ngStyle]="style()" class="product-wrapper window-height">    
                             
                             <!-- <div class="stamp">
                                 <div class="intro">
@@ -106,42 +106,6 @@
 
 
                             <!-- <img src="{{productImgUrl}}"/> -->
-                            <!-- <div class="stamp">
-                                <div class="howItWorks wrapper easyToUse">
-                                    <div class="row">
-                                        <div class="col-12 col-md-6">
-                                            <div class="header">
-                                                <div class="title">3 Steps</div>
-                                                <div class="summary">Generate a PDF in 3 simple steps</div> 
-        
-                                            </div>        
-                                        </div>
-                                        <div class="col-12 col-md-6">
-                                            <div class="content">
-                                                <div class="steps">
-                                                    <div class="numberWrapper">
-                                                        <div class="number">1</div>
-                                                        <div class="subtitle">Import exhibits</div>
-                                                    </div>
-                                                    <div class="numberWrapper">
-                                                        <div class="number">2</div>
-                                                        <div class="subtitle">Reference exhibits</div>
-                                                    </div>
-                                                    <div class="numberWrapper">
-                                                        <div class="number">3</div>
-                                                        <div class="subtitle pdf-step">
-                                                            <span>Publish PDF</span>        
-                                                        </div>
-                                                    </div>
-                                                </div>    
-                                            </div>
-                                        </div>   
-                                        
-                                    </div>
-                                </div>
-        
-        
-                            </div> -->
                         </div>
     
                     </div>
@@ -152,39 +116,75 @@
                 </div>
             </div>
         </div>
-        <section id="product-section">
+
+        <section id="section-vid">
             <div class="container">
-                <div class="titleWrapper">
-                    <h2 class="title">Features</h2>
-                </div>
+                <div class="row row-vid">
 
-                <div class="stamp">
-                    <div class="features-block">
-                            <div class="features">
-                                <div class="row no-gutters">
-                                    <div class="col-12 col-md-6 col-lg-3" *ngFor="let feature of benefits">
-                                        <div class="feature">
-                                            <div class="header">
-                                                <i class="icon {{feature.icon}}"></i>
-                                                <div class="subtitle">{{feature.title}}</div>
+                    <div class="col-12 col-md-6">
+                        <div class="summary-wrapper">
+                            <div class="title-wrapper">
+                                <h2 class='title'>Zibbit</h2>
+                                <div class="subtitle">Exhibit Manager for Microsoft Word</div>
+                            </div>
+                            <div class="stamp">
+                                <div class="howItWorks wrapper easyToUse">
+                                    <div class="content">
+                                        <!-- <p class="">Generate a PDF in 3 simple steps</p>  -->
+                                        <div class="steps">
+                                            <div class="numberWrapper">
+                                                <div class="number">1</div>
+                                                <div class="subtitle">Import exhibits</div>
                                             </div>
-                                            <div class="content">
-                                                <div class="steps">
-                                                    <div class="numberWrapper-top" *ngFor='let item of feature.items'>
-                                                        <i class="fas fa-check-square checkbox"></i>
-                                                        <div class="subtitle">{{item}}</div>
-                                                    </div>
-                                                </div>                        
+                                            <div class="numberWrapper">
+                                                <div class="number">2</div>
+                                                <div class="subtitle">Reference exhibits</div>
                                             </div>
-                                        </div>
+                                            <div class="numberWrapper">
+                                                <div class="number">3</div>
+                                                <div class="subtitle pdf-step">
+                                                    <span>Publish PDF</span>        
+                                                </div>
+                                            </div>
+                                        </div>    
                                     </div>
+                                        
                                 </div>
-                            </div>        
-                    </div>  
+        
+        
+                            </div>
+                        </div>
+             
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="vid-wrapper">
+                            <iframe [src]="demoLink" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
 
-            </div> 
+                <div class="row no-gutters row-features">
+                    <div class="col-12 col-md-6 col-lg-3" *ngFor="let feature of benefits">
+                        <div class="feature">
+                            <div class="header">
+                                <i class="icon {{feature.icon}}"></i>
+                                <div class="subtitle">{{feature.title}}</div>
+                            </div>
+                            <div class="content">
+                                <div class="steps">
+                                    <div class="numberWrapper-top" *ngFor='let item of feature.items'>
+                                        <i class="fas fa-check-square checkbox"></i>
+                                        <div class="subtitle">{{item}}</div>
+                                    </div>
+                                </div>                        
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+
+            </div>
         </section>
+
         <section id="security-section">
             <div class="container">
                 <div class="wrapper">
@@ -195,14 +195,12 @@
                                 <i class="icon fas fa-shield-alt"></i>
                                 <h2 class="title">Privacy</h2>
                             </div>            
-                            <p class="summary">The entire process of assembling exhibits is performed locally on your own device</p>
+                            <p class="subtitle">The entire process of assembling exhibits is performed locally on your own device</p>
                         </div>
                         <div class="col-12 col-md">
                             <div class="content">        
                                 <ul>                                
-                                    <li>
-                                        <span>Exhibits are <strong>never</strong> transmitted, processed, or stored on any remote server</span>
-                                    </li>
+                                    <li>Exhibits are never transmitted, processed, or stored on any remote server</li>
                                     <li>Network communication is encrypted with TLS/SSL protocols</li>
                                     <li>The installation package is encrypted to prevent tampering</li>
                                 </ul>
@@ -213,6 +211,52 @@
                 </div>
             </div> 
         </section>
+
+
+        <section class="glance">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class='title'>At a glance</h2>
+                        <div class="container">
+                            <img [src]="images.get('manage-exhibits-window')"/>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- <section id="product-section">
+            <div class="container">
+                <div class="titleWrapper">
+                    <h2 class="title">Features</h2>
+                </div>
+                <div class="row no-gutters features">
+                    <div class="col-12 col-md-6 col-lg-3" *ngFor="let feature of benefits">
+                        <div class="feature">
+                            <div class="header">
+                                <i class="icon {{feature.icon}}"></i>
+                                <div class="subtitle">{{feature.title}}</div>
+                            </div>
+                            <div class="content">
+                                <div class="steps">
+                                    <div class="numberWrapper-top" *ngFor='let item of feature.items'>
+                                        <i class="fas fa-check-square checkbox"></i>
+                                        <div class="subtitle">{{item}}</div>
+                                    </div>
+                                </div>                        
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+        
+
+            </div> 
+        </section> -->
+
 
         <section id="process-section" class="process">
             <div class="titleWrapper">
@@ -365,28 +409,11 @@
 
             </div>
         </section>
-        <section class="glance">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class='title'>Watch</h2>
-                        <div class="vid-wrapper">
-                            <iframe [src]="demoLink" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <!-- <iframe width="420" height="315" frameborder="0" allowfullscreen></iframe>   -->
-                        </div>
-                        <!-- <h2 class='title'>At a glance</h2>
-                        <div class="container">
-                            <img [src]="images.get('manage-exhibits-window')"/>
-                        </div> -->
-            
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="getStarted">
+
+        <!-- <section class="getStarted">
             <h2 class='title'>Try it out!</h2>
             <a class="btn-dark btn-getStarted" routerLink='/learn'>Get Started</a>        
-        </section>
+        </section> -->
     
   <!-- <section class="section-carousel">
       <div class="container">
