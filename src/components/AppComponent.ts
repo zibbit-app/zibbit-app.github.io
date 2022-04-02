@@ -21,8 +21,9 @@ export class AppComponent implements IRemotable {
         appRemote.setRemotable(this);
 
         this.router.events.subscribe((event: any) => {
+            var url = event['url'];
             if (event instanceof NavigationEnd) {
-                var isHomePage = event['url'] == '/home' || event['url'] == '/';
+                var isHomePage = url.startsWith('/home') || url == '/' || url.startsWith('/?');
                 this.showHeader = !isHomePage;
                 //this.showFooter = !isHomePage;
             }
