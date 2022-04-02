@@ -119,144 +119,48 @@
 
         <section id="section-vid">
             <div class="container">
-                <div class="row row-vid">
-
-                    <div class="col-12 col-md-6">
-                        <div class="summary-wrapper">
-                            <div class="title-wrapper">
-                                <h2 class='title'>Zibbit</h2>
-                                <div class="subtitle">Exhibit Manager for Microsoft Word</div>
-                            </div>
-                            <div class="stamp">
-                                <div class="howItWorks wrapper easyToUse">
-                                    <div class="content">
-                                        <!-- <p class="">Generate a PDF in 3 simple steps</p>  -->
-                                        <div class="steps">
-                                            <div class="numberWrapper">
-                                                <div class="number">1</div>
-                                                <div class="subtitle">Import exhibits</div>
-                                            </div>
-                                            <div class="numberWrapper">
-                                                <div class="number">2</div>
-                                                <div class="subtitle">Reference exhibits</div>
-                                            </div>
-                                            <div class="numberWrapper">
-                                                <div class="number">3</div>
-                                                <div class="subtitle pdf-step">
-                                                    <span>Publish PDF</span>        
-                                                </div>
-                                            </div>
-                                        </div>    
-                                    </div>
-                                        
-                                </div>
-        
-        
-                            </div>
-                        </div>
-             
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="vid-wrapper">
-                            <iframe [src]="demoLink" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row no-gutters row-features">
-                    <div class="col-12 col-md-6 col-lg-3" *ngFor="let feature of benefits">
-                        <div class="feature">
-                            <div class="header">
-                                <i class="icon {{feature.icon}}"></i>
-                                <div class="subtitle">{{feature.title}}</div>
-                            </div>
-                            <div class="content">
-                                <div class="steps">
-                                    <div class="numberWrapper-top" *ngFor='let item of feature.items'>
-                                        <i class="fas fa-check-square checkbox"></i>
-                                        <div class="subtitle">{{item}}</div>
-                                    </div>
-                                </div>                        
-                            </div>
-                        </div>
-                    </div>
-                </div>        
-
-            </div>
-        </section>
-
-        <section id="security-section">
-            <div class="container">
                 <div class="wrapper">
-                   
-                    <div class="row">
+                    <div class="row row-vid">
                         <div class="col-12 col-md-6">
-                            <div class="titleWrapper">
-                                <i class="icon fas fa-shield-alt"></i>
-                                <h2 class="title">Privacy</h2>
-                            </div>            
-                            <p class="subtitle">The entire process of assembling exhibits is performed locally on your own device</p>
+                            <div class="summary-wrapper">
+                                <div class="title-wrapper">
+                                    <h2 class='title'>Zibbit</h2>
+                                    <div class="subtitle">Exhibit Manager for Microsoft Word</div>
+                                </div>
+                                <div class="stamp">
+                                    <div class="howItWorks wrapper easyToUse">
+                                        <div class="content">
+                                            <!-- <p class="">Generate a PDF in 3 simple steps</p>  -->
+                                            <div class="steps">
+                                                <div class="numberWrapper">
+                                                    <div class="number">1</div>
+                                                    <div class="subtitle">Import exhibits</div>
+                                                </div>
+                                                <div class="numberWrapper">
+                                                    <div class="number">2</div>
+                                                    <div class="subtitle">Reference exhibits</div>
+                                                </div>
+                                                <div class="numberWrapper">
+                                                    <div class="number">3</div>
+                                                    <div class="subtitle pdf-step">
+                                                        <span>Publish PDF</span>        
+                                                    </div>
+                                                </div>
+                                            </div>    
+                                        </div>  
+                                    </div>                
+                                </div>
+                            </div>                 
                         </div>
-                        <div class="col-12 col-md">
-                            <div class="content">        
-                                <ul>                                
-                                    <li>Exhibits are never transmitted, processed, or stored on any remote server</li>
-                                    <li>Network communication is encrypted with TLS/SSL protocols</li>
-                                    <li>The installation package is encrypted to prevent tampering</li>
-                                </ul>
+                        <div class="col-12 col-md-6">
+                            <div class="vid-wrapper">
+                                <iframe [src]="demoLink" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
-        
-                        </div>
-                    </div>
-                </div>
-            </div> 
-        </section>
-
-
-        <section class="glance">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class='title'>At a glance</h2>
-                        <div class="container">
-                            <img [src]="images.get('manage-exhibits-window')"/>
-                        </div>
-            
+                        </div>    
                     </div>
                 </div>
             </div>
         </section>
-
-
-
-        <!-- <section id="product-section">
-            <div class="container">
-                <div class="titleWrapper">
-                    <h2 class="title">Features</h2>
-                </div>
-                <div class="row no-gutters features">
-                    <div class="col-12 col-md-6 col-lg-3" *ngFor="let feature of benefits">
-                        <div class="feature">
-                            <div class="header">
-                                <i class="icon {{feature.icon}}"></i>
-                                <div class="subtitle">{{feature.title}}</div>
-                            </div>
-                            <div class="content">
-                                <div class="steps">
-                                    <div class="numberWrapper-top" *ngFor='let item of feature.items'>
-                                        <i class="fas fa-check-square checkbox"></i>
-                                        <div class="subtitle">{{item}}</div>
-                                    </div>
-                                </div>                        
-                            </div>
-                        </div>
-                    </div>
-                </div>        
-        
-
-            </div> 
-        </section> -->
-
 
         <section id="process-section" class="process">
             <div class="titleWrapper">
@@ -409,6 +313,79 @@
 
             </div>
         </section>
+
+        <section id="product-section">
+            <div class="container">
+                <div class="titleWrapper">
+                    <h2 class="title">Features</h2>
+                </div>
+                <div class="row no-gutters features">
+                    <div class="col-12 col-md-6 col-lg-3" *ngFor="let feature of benefits">
+                        <div class="feature">
+                            <div class="header">
+                                <i class="icon {{feature.icon}}"></i>
+                                <div class="subtitle">{{feature.title}}</div>
+                            </div>
+                            <div class="content">
+                                <div class="steps">
+                                    <div class="numberWrapper-top" *ngFor='let item of feature.items'>
+                                        <i class="fas fa-check-square checkbox"></i>
+                                        <div class="subtitle">{{item}}</div>
+                                    </div>
+                                </div>                        
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+            </div> 
+        </section>
+
+        <section id="security-section">
+            <div class="container">
+                <div class="wrapper">
+                   
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="titleWrapper">
+                                <i class="icon fas fa-shield-alt"></i>
+                                <h2 class="title">Privacy</h2>
+                            </div>            
+                            <p class="subtitle">The entire process of assembling exhibits is performed locally on your own device</p>
+                        </div>
+                        <div class="col-12 col-md">
+                            <div class="content">        
+                                <ul>                                
+                                    <li>Exhibits are never transmitted, processed, or stored on any remote server</li>
+                                    <li>Network communication is encrypted with TLS/SSL protocols</li>
+                                    <li>The installation package is encrypted to prevent tampering</li>
+                                </ul>
+                            </div>
+        
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </section>
+
+
+        <section class="glance">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class='title'>At a glance</h2>
+                        <div class="container">
+                            <img [src]="images.get('manage-exhibits-window')"/>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
 
         <!-- <section class="getStarted">
             <h2 class='title'>Try it out!</h2>

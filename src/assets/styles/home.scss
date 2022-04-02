@@ -373,18 +373,28 @@
         .title{
             color: $zibbitTheme;
         }
-        text-align: center;
+        // text-align: center;
         margin-bottom: 20px;
 
     }
 
+    .wrapper{
+        max-width: 800px;
+        margin: 0px auto;
+    }
+
     .summary-wrapper{
+        max-width: 700px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        // align-items: flex-end;
+        // justify-content: center;
+        // align-items: center;
         .steps{
             .numberWrapper{
+                .number{
+                    font-weight: 600;
+                }
                 margin-bottom: 10px;
             }
 
@@ -395,7 +405,7 @@
     .row-vid{
         align-items: center;
         .vid-wrapper{
-            padding: 5px;
+            //padding: 5px;
             background: $zibbitThemeDark;
         }
     }
@@ -498,6 +508,10 @@
 
 
     @media (max-width: $md) {
+        .summary-wrapper{
+            align-items: center;
+            text-align: center;
+        }
         .steps{
             margin-bottom: 40px;
         }
@@ -566,7 +580,7 @@
     .titleWrapper{
         text-align: center;
         color: $zibbitTheme;
-        margin-bottom: 50px;
+        // margin-bottom: 50px;
     }
 
 
