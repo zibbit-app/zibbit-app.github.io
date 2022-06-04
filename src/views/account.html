@@ -1,0 +1,138 @@
+<div class="page page-login">
+    <section class="section-plans-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="banner">
+                        <h1 class="title">Account</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="account">
+        <div class="menu">
+            <button (click)="onNav(Nav.Dashboard)" class="btn btn-light">Dashboard</button>
+            <button (click)="onNav(Nav.Profile)" class="btn btn-light">Profile</button>
+            <button (click)="onNav(Nav.Organizations)" class="btn btn-light"> Organizations</button>
+            <button *ngIf="canManageBilling" (click)=onNav(Nav.Billing) class="btn btn-light">Billing</button>
+            <button [routerLink]="['/logout']" class="btn btn-light">Logout</button>
+        </div>
+        <div class="dashboard">
+            <div *ngIf="viewType == Nav.Dashboard" class="dashboard-view">
+                <div class="dash-title">Welcome back, <b>{{username}}</b></div>
+                <div class="dash-content">
+                    <div *ngIf="organizations.length == 0">
+                        <div class="action-wrapper">
+                            <span>Already have a registration key? Submit it </span><span class="btn-link" (click)="addNewOrg()">here</span>.
+                        </div>
+                        <div class="action-wrapper">
+                            <span>Or select a </span><a [routerLink]="['/plans']">plan</a> to register a new organization.    
+                        </div>
+    
+                    </div>
+                    <div *ngIf="ownerOrganization">
+                        <span class="mr-1">Review your organization</span>
+                        <a class="" [routerLink]="['/organization/', ownerOrganization.id]">{{ownerOrganization.name}}</a>
+                    </div>
+                </div>
+
+                <!-- <div *ngIf="canManageBilling">
+                    <div>Register your organization</div>
+                    <button [routerLink]="['/plans']" class="btn btn-light">Plans</button>
+                </div> -->
+            </div>
+
+            <div *ngIf="viewType == Nav.Billing" class="billing-view">
+                <div class="dash-title"> You are subscribed to <b>{{plan.name}}</b></div>
+                <!-- <div class="dash-title">Welcome back, <b>{{username}}</b></div> -->
+                <div class="dash-content">
+                    <div>This plan allows up to {{plan.maxUsers}} user(s)</div>
+
+                    <span class="mr-1">Review your billing details</span> <span class="btn-link" (click)="onBillingClickedAsync()">here</span>
+                    <!-- <button class="btn-link"> </button>
+                    <div *ngIf="organizations.length == 0">
+                        <div class="action-wrapper">
+                            <span>Already have an registration key? Submit it </span><span class="btn-link" (click)="addNewOrg()">here</span>.
+                        </div>
+                        <div class="action-wrapper">
+                            <span>Or select a </span><a [routerLink]="['/plans']">plan</a> to register a new organization.    
+                        </div>
+    
+                    </div> -->
+                </div>
+
+                <!-- <div *ngIf="canManageBilling">
+                    <div>Register your organization</div>
+                    <button [routerLink]="['/plans']" class="btn btn-light">Plans</button>
+                </div> -->
+            </div>
+
+
+            <div *ngIf="viewType == Nav.Profile" class="profile-view">
+                <!-- <div class="dash-title">Profile</div> -->
+                <div>
+                    <form class="loginForm">
+                        <div class="header">
+                            <div class="subtitle">Change Password</div>
+                        </div>
+                        <div class="body">
+                            <div class="field">
+                                <label>New Password</label>
+                                <input type="password" name="password" [(ngModel)]="password" />
+    
+                            </div>
+                            <div class="field">
+                                <label>Repeat Password</label>
+                                <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword" />    
+                            </div>   
+                        </div>
+
+                        <div class="footer">
+                            <button [disabled]="!canSubmitProfile" class="btn-theme" (click)="onProfileSubmitAsync()" type="submit">Submit</button>    
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <div *ngIf="viewType == Nav.Organizations" class="org-view">
+                <button (click)="addNewOrg()" class="btn btn-light my-add">Request Access</button> 
+
+                <!-- <div class="d-flex align-items-center">
+                </div> -->
+
+
+                <div class="org-list mt-2">
+                    <div *ngFor="let org of organizations; let i = index">
+                        <a class="" [routerLink]="['/organization/', org.id]">{{(i + 1)}}. {{org.name}}</a>
+                        
+
+                    </div>
+                </div>
+
+            </div>
+
+            <modal-ui [buttons]="addOrgModalButtons" title="Request Access Form" [show]="showModal" [onCloseCallback]="onModalClose">
+                <div class="orgRegForm">
+                    <!-- <div class=field>
+                        <input type="checkbox" name="enterRegKey" [(ngModel)]="enterRegKey" />
+                    </div> -->
+                    <div class="field-vertical">
+                        <label>Provide the registration key to gain access</label>
+                        <input placeholder="enter registration key" type="text" name="regKey" [(ngModel)]="regKey" />
+                        <!-- <button (click)="handleRegKeySubmit()" class="btn btn-light">Submit</button> -->
+                    </div>
+    
+                </div>
+            </modal-ui>
+<!-- 
+            <div *ngIf="viewType == Nav.Billing" class="billing-view">
+                <div>bill1</div>
+            </div> -->
+
+        </div>
+    </div>  
+</div>
+
+      

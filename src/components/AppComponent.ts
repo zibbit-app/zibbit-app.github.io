@@ -1,4 +1,7 @@
-import {Component, Injectable, NgZone} from "@angular/core";
+import { AppError, UnauthorizedError } from './../errors/ApplicationErrors';
+import { UserService } from './../services/UserService';
+import { Bootstrapper } from './../Bootstrapper';
+import {Component, Injectable, Injector, NgZone} from "@angular/core";
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import {AppRemoteManager} from "../utilities/AppRemoteManager";
 import {IRemotable} from "../utilities/IRemotable";
@@ -17,7 +20,7 @@ export class AppComponent implements IRemotable {
     public showHeader: boolean = true;
     public showFooter: boolean = true;
 
-    constructor(appRemote: AppRemoteManager, private zone: NgZone, private router: Router) {
+    constructor(appRemote: AppRemoteManager, private router: Router, private injector: Injector) {
         appRemote.setRemotable(this);
 
         this.router.events.subscribe((event: any) => {
@@ -28,6 +31,15 @@ export class AppComponent implements IRemotable {
                 //this.showFooter = !isHomePage;
             }
           });
+        
+        //   var error = new UnauthorizedError();
+        //   throw error;
+        //   var test1 = error instanceof AppError;
+        //   var test2 = error instanceof UnauthorizedError;
+        //   console.log("error test", test1, test2);
+      
+          
+        Bootstrapper.setAuthInterceptor(injector);
     }
 
     public setBusyIndicator(isVisible: boolean): void {

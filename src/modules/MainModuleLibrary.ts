@@ -1,11 +1,12 @@
 import { Bootstrapper } from '../Bootstrapper';
-import { NgModule, APP_INITIALIZER, Injector } from '@angular/core'
+import { NgModule, APP_INITIALIZER, Injector, ErrorHandler } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import {FormsModule} from "@angular/forms"
 import { RouterModule }   from '@angular/router';
 import { ApplicationRoutes }   from '../routes/ApplicationRoutes';  
 import {AppComponent} from '../components/AppComponent';
 import { promises } from 'fs'; 
+import { GlobalErrorHandler } from '../utilities/GlobalErrorHandler';
 
 // import {HomeComponent} from '../components/HomeComponent'
 // import {HeaderComponent} from '../components/HeaderComponent'
@@ -59,6 +60,10 @@ export function initializeApp(injector: Injector) {
           useFactory: initializeApp,
           multi: true,
           deps: [Injector]
+        },
+        {
+          provide: ErrorHandler,
+          useClass: GlobalErrorHandler
         }
     ],
     bootstrap: [AppComponent]

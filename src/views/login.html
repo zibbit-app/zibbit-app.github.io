@@ -1,0 +1,49 @@
+<div class="page page-login">
+    <!-- <section class="section-plans-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="banner">
+                        <h1 class="title">Login</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section class="section-login">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                        <form class="loginForm">
+                            <div class="header">
+                                <div class="title">Login</div>
+                                
+                            </div>
+                            <div class="body">
+                                <div class="field">
+                                    <label>Email</label>
+                                    <input type="text" name="username" [(ngModel)]="username" />
+        
+                                </div>
+                                <div class="field">
+                                    <label>Password</label>
+                                    <input type="password" name="password" [(ngModel)]="password" />    
+                                </div> 
+                                <div>
+                                    <a class="" routerLink='/register'>Register new user</a>        
+    
+                                </div>   
+                            </div>
+
+                            <div class="footer">
+                                <button [disabled]="!canSubmit" class="btn-theme" (click)="onSubmitAsync()" type="submit">Submit</button>    
+                            </div>
+ 
+                        </form>
+                </div>
+            </div>
+        </div>
+    </section>  
+</div>
+
+      

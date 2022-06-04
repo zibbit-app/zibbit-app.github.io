@@ -1,0 +1,60 @@
+@import 'global';
+@import 'page';
+
+
+.section-plans-banner{
+    background: $zibbitTheme;
+    .banner{
+        .title, .subtitle{
+            color: $white;
+            
+        }
+        text-align: center;
+        justify-content: center;
+        a{
+            margin-top: 20px;
+        }
+    }
+
+}
+
+.section-login{
+    .loginForm{
+        width: 400px;
+        margin: 0px auto;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        .header, .footer{
+            text-align: center;
+            padding: 10px 20px;
+            //background: $zibbitTheme;
+            color: white;
+        }
+        .footer{
+            // text-align: center;
+        }
+        .body{
+            text-align: center;
+            padding: 10px 10px;
+            .field{
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                .input{
+                    padding: 5px 20px;
+                    flex-grow: 1;
+                    flex-shrink: 1;
+                }
+                label{
+                    min-width: 100px;
+                }
+            }
+        }
+    
+        }
+    // background: $zibbitTheme;
+
+    
+}

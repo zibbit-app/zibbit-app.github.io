@@ -1,13 +1,23 @@
 <nav class='main-nav'>
     <ul class="nav-list">
         <li class='nav-item'>
-            <a class="btn-light" (click)="notifyNavigationOccured($event)" [routerLink]="['/learn']"> Get Started </a>
+            <a (click)="notifyNavigationOccured($event)" [routerLink]="['/learn']"> Get Started</a>
         </li>
         <li class='nav-item'>
-            <a class="btn-light" (click)="notifyNavigationOccured($event)" [routerLink]="['/downloads']"> Download </a>
+            <a (click)="notifyNavigationOccured($event)" [routerLink]="['/downloads']"> Download</a>
+        </li>
+        <li class='nav-item'>
+            <a (click)="notifyNavigationOccured($event)" [routerLink]="['/plans']"> Plans</a>
         </li>
         <li *ngIf="fullMenu" class='nav-item'>
-            <a class="btn-light" (click)="notifyNavigationOccured($event)" [routerLink]="['/privacy']"> Privacy Policy</a>
+            <a (click)="notifyNavigationOccured($event)" [routerLink]="['/privacy']"> Privacy Policy</a>
         </li>
+        <li class='nav-item'>
+            <a *ngIf="isSignedIn" class="btn-light" (click)="notifyNavigationOccured($event)" [routerLink]="['/account']">My Account</a>
+            <a *ngIf="!isSignedIn" class="btn-light" (click)="notifyNavigationOccured($event)" [routerLink]="['/login']">Login</a>
+        </li>
+        <!-- <li *ngIf="isSignedIn" class='nav-item'>
+            <a class="btn-light" (click)="notifyNavigationOccured($event)" [routerLink]="['/logout']"> Logout</a>
+        </li> -->
     </ul>
 </nav>

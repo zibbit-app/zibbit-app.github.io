@@ -1,0 +1,103 @@
+<div class="page page-login">
+    <section class="section-plans-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="banner">
+                        <h1 class="title">{{organization?.name}}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="account">
+        <div class="menu">
+            <!-- <button (click)="onNav(Nav.Home)" class="btn btn-light">Home</button> -->
+            <button [disabled]="!canWrite" (click)="onNav(Nav.Users)" class="btn btn-light">Users</button>
+            <!-- <button (click)="onNav(Nav.Templates)" class="btn btn-light">Templates</button> -->
+            <button [disabled]="!canWrite" (click)="onNav(Nav.Details)" class="btn btn-light">Details</button>
+            <button [disabled]="!canWrite" (click)="onNav(Nav.Settings)" class="btn btn-light">Settings</button>
+        </div>
+        <div class="dashboard">
+            <div *ngIf="viewType == Nav.Details" class="profile-view">
+                <div>
+                    <form class="loginForm">
+                        <div class="header">
+                            <div class="subtitle">Organization Details</div>
+                        </div>
+                        <div class="body">
+                            <div class="field">
+                                <label>Name</label>
+                                <input type="text" name="orgName" [(ngModel)]="orgName" />
+                            </div>
+
+                        </div>
+
+                        <div class="footer">
+                            <button [disabled]="!canSubmitDetails" class="btn-theme" (click)="onDetailsSubmitAsync()" type="submit">Submit</button>    
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <div *ngIf="viewType == Nav.Users" class="org-view">
+                <!-- <div class="dash-title">Users</div> -->
+                <div class="dash-title">{{plan.name}} allows up to {{plan.maxUsers}} user(s)</div>
+
+                <div class="org-list">
+                    <div *ngFor="let user of users; let i = index">
+                        <div class="user-wrapper">
+                            <span class="username">{{i + 1}}. {{user.userName}} </span>
+
+                            <div *ngIf="canWrite" class="dropdown">
+                                <div class="menu-wrapper" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </div>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <button (click)="onRevokeAccessAsync(user)" class="dropdown-item">Revoke Access</button>
+                                  <!-- <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a> -->
+                                </div>
+                              </div>
+    
+                        </div>
+                        <!-- <i class="fa-solid fa-ellipsis-vertical"></i> -->
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="viewType == Nav.Settings" class="settings-view">
+                <!-- <div class="dash-title">Settings</div> -->
+                
+
+                <form class="loginForm">
+                    <div class="header">
+                        <div class="subtitle">Registration Key</div>
+                    </div>
+                    <div class="body">
+                        <!-- <div>Registration Key</div> -->
+                        <div>{{regKey}}</div> 
+        
+
+                    </div>
+
+                    <div class="footer">
+                        <button [disabled]="!canSubmitDetails" class="btn-light mt-2" (click)="onSettingsSubmitAsync()" type="submit">New Key</button>        
+                    </div>
+
+                </form>
+
+
+
+            </div>
+<!-- 
+            <div *ngIf="viewType == Nav.Billing" class="billing-view">
+                <div>bill1</div>
+            </div> -->
+
+        </div>
+    </div>  
+</div>
+
+      

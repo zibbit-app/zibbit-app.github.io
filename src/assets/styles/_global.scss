@@ -16,6 +16,8 @@ section{
 }
 
 %my-fa-icon{
+    display: flex;
+    align-items: center;
     &:before{
         font-family: "Font Awesome 5 Free";
         //font-family: "Font Awesome";
@@ -23,6 +25,25 @@ section{
         font-weight: 900;
         font-size: 30px;
         font-style: normal;
+        margin-right: 10px;
+    }
+}
+
+
+.my-copy{
+    cursor: pointer;
+    @extend %my-fa-icon;
+    &:before {
+        content: "\f328";
+    }
+}
+
+.my-add{
+    cursor: pointer;
+    @extend %my-fa-icon;
+    &:before {
+        content: "\2b";
+        font-size: 20px;
     }
 }
 
@@ -109,7 +130,23 @@ img{
     }
 }
 
-.btn-light {
+
+.btn-link{
+    cursor: pointer;
+}
+
+.btn-theme {
+    @extend .btn-base;
+    color: $zibbitTheme !important;
+    border: 2px solid $zibbitTheme;
+    background-color: $white;
+    &:hover{
+        background-color: $zibbitTheme;
+        color: $white !important;
+    }
+}
+
+.btn-gray {
     @extend .btn-base;
     color: $black !important;
     border: 1px solid $black;
@@ -118,6 +155,11 @@ img{
         background-color: $black;
         color: $white !important;
     }
+}
+
+
+.btn-light {
+    @extend .btn-theme;
 }
 
 
@@ -146,5 +188,40 @@ img{
     border-radius: 50%;
     flex-shrink: 0;
 }
+
+
+.field{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    input[type=text], input[type=password],
+    .input{
+        padding: 5px 20px;
+        flex-grow: 1;
+        flex-shrink: 1;
+        //max-width: 400px;
+    }
+    label{
+        min-width: 100px;
+    }
+}
+
+.field-vertical {
+    @extend .field;
+    flex-wrap: wrap;
+    // flex-direction: column;
+    // align-items: flex-start;
+    label{
+        flex-grow: 1;
+    }
+
+}
+
+
+input[type=checkbox] {
+    transform: scale(1.5);
+    margin: 0px 20px;
+}
+
 
 

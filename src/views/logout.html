@@ -1,0 +1,33 @@
+<div class="page page-login">
+    <section class="section-plans-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="banner">
+                        <h1 class="title">Logout</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-login">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                        <form class="loginForm">
+                            <div class="body">
+                                <div>Are you sure you want to logout?</div>
+                            </div>
+
+                            <div class="footer">
+                                <button [disabled]="!canSubmit" class="btn-light" (click)="onSubmitAsync()" type="submit">Submit</button>    
+                            </div>
+ 
+                        </form>
+                </div>
+            </div>
+        </div>
+    </section>  
+</div>
+
+      

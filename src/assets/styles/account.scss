@@ -1,0 +1,167 @@
+@import 'global';
+@import 'page';
+
+
+.section-plans-banner{
+    background: $zibbitTheme;
+    .banner{
+        .title, .subtitle{
+            color: $white;
+            
+        }
+        text-align: center;
+        justify-content: center;
+        a{
+            margin-top: 20px;
+        }
+    }
+
+}
+
+.account{
+    display: flex;
+    .menu{
+        border-right: solid $black 1px;
+        flex-basis: 200px;
+        .btn{
+            // margin-bottom: 10px;
+            outline: none !important;
+            box-shadow: none !important;            
+            border: none;
+            border-bottom: solid $black 1px;
+            width: 100%;
+            border-radius: 0;
+            text-align: left;
+
+            &:hover{
+                background-color: $zibbitThemeDark;
+                color: $white !important;
+            }
+            
+        };
+
+    }
+    .dashboard{
+        padding: 20px;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0px;
+        background: white;
+        
+    }
+
+    .dash-title{
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .dash-content{
+        margin-top: 40px;
+    }
+
+    .action-wrapper{
+        margin-bottom: 20px;
+    }
+
+    .profile-view{
+        max-width: 420px;
+
+        .loginForm{
+            border: 1px solid lightgray;
+            box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+            // max-width: 400px;
+            margin: 0px auto;
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: center;
+            // align-items: center;
+            .header, .footer{
+                // text-align: center;
+                padding: 10px 20px;
+                // background: $zibbitTheme;
+                // color: white;
+            }
+            .header{
+                color: $zibbitTheme;
+                text-align: left;
+                // background: $zibbitTheme;
+                // color: white;
+    
+    
+            }
+            .footer{
+                text-align: right;
+    
+                // text-align: center;
+            }
+            .body{
+                padding: 10px 20px;
+                .field{
+                    margin-bottom: 10px;
+                    display: flex;
+                    align-items: center;
+                    .input{
+                        padding: 5px 20px;
+                        flex-grow: 1;
+                        flex-shrink: 1;
+                    }
+                    label{
+                        min-width: 150px;
+                        
+                    }
+                }
+            }
+        
+            }
+    
+
+        // .loginForm{
+        //     //width: 400px;
+        //     margin: 0px auto;
+        //     // display: flex;
+        //     // flex-direction: column;
+        //     // justify-content: center;
+        //     // align-items: center;
+        //     .header, .footer{
+        //         text-align: center;
+        //         padding: 10px 20px;
+        //         background: $zibbitTheme;
+        //         color: white;
+        //     }
+        //     .footer{
+        //         text-align: right;
+        //         // text-align: center;
+        //     }
+        //     .body{
+        //         //padding: 10px 20px;
+        //         .field{
+        //             margin-bottom: 10px;
+        //             display: flex;
+        //             align-items: center;
+        //             .input{
+        //                 padding: 5px 20px;
+        //                 flex-grow: 1;
+        //                 flex-shrink: 1;
+        //             }
+        //             label{
+        //                 min-width: 150px;
+        //             }
+        //         }
+        //     }
+            
+        // }    
+    
+    }
+
+    .org-view{
+        .orgRegForm{
+            .btn{
+                margin-left: 10px;
+            }
+        }
+    }
+
+
+    
+    
+}

@@ -1,0 +1,49 @@
+<div class="page page-plans">
+    <!-- <section class="section-plans-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="banner">
+                        <h1 class="title">Plans</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section class="section-plans">
+        <div class="container">
+            <div class="row">
+                <div class="plan-wrapper col-12 col-lg-4"  *ngFor="let plan of plans">
+                    <div class="plan">
+                        <div class="header">
+                            <div class="title">{{plan.name}}</div>
+                        </div>
+                        <div class="body">
+                            <div class="prices">
+                                <ul>
+                                    <div class="subtitle" *ngFor='let price of plan.prices'>{{price.description}}</div>
+                                </ul>
+                            </div> 
+                            <div class="features">
+                                <ul>
+                                    <div class="feature" *ngFor='let feature of plan.features'>
+                                        <i class="fas fa-check-circle checkbox"></i>
+                                        <div class="subtitle">{{feature.label}}</div>
+                                    </div>
+                                </ul>
+                            </div>
+                            <div class="description subtitle">{{plan.description}}</div>
+
+                        </div>
+                        <div class="footer">
+                            <a class="btn-dark" [routerLink]="['/checkout/', plan.id]">Checkout</a>
+                            <!-- <a class="btn-dark" routerLink='/checkout?planId={{plan.id}}'>Checkout</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  
+</div>
+
+      

@@ -11,6 +11,12 @@ export class AppConfig {
         this.imagesPath = "/uploads";
     }
 
+    public static get isDev(): boolean{
+        var env = process.env.NODE_ENV || 'development';
+        return env === 'development';
+  
+    }
+
     public getUploadsPath(){
         return this.imagesPath;
     }

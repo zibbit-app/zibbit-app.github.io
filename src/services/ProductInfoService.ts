@@ -1,3 +1,4 @@
+import { PlansClient } from './../utilities/PlansClient';
 import { Injectable } from '@angular/core';
 import { AppConfig } from '../utilities/AppConfig';
 import { GateKeeperClient } from '../utilities/GateKeeperClient';
@@ -7,6 +8,8 @@ import {Installer} from '../models/Installer';
 import { promises } from 'fs';
 import { Benefit } from '../models/Benefit';
 import { TutorialStep } from '../models/TutorialStep';
+import { Plan } from 'models/Plan';
+import { Price } from 'models/Price';
 
 
 export enum LogoType{
@@ -23,6 +26,7 @@ export enum LogoType{
 export class ProductInfoService {
     private config: AppConfig;
     private gateKeeperClient: GateKeeperClient;
+    private plansClient: PlansClient;
     private productName: string;
     private logoUrl: string;
     private email: string;
@@ -30,10 +34,12 @@ export class ProductInfoService {
     private imageUrls: string[];
     private cards: Card[];
     private installers: Installer[];
+    private plans: Plan[];
 
   
-    constructor(client: GateKeeperClient) {
+    constructor(client: GateKeeperClient, plansClient: PlansClient) {
       this.gateKeeperClient = client;
+      this.plansClient = plansClient;
       this.config = new AppConfig;
       this.productName = "Zibbit";
       this.email = "zibbit.info@gmail.com";
@@ -43,9 +49,25 @@ export class ProductInfoService {
       this.installers = this.initializeInstallers();
     }
 
+
     public get demoLink(): string{
       return this.videoLink;
     }
+
+    public getPlans(): Promise<Plan[]> {
+      return this.plansClient.getPlansAsync();
+    }
+
+    public getPrices(prodId: string): Promise<Price[]> {
+      return this.plansClient.getPrices(prodId);
+    }
+
+    public getSessions(priceId: string): Promise<string>{
+      return this.plansClient.createCheckoutSession(priceId);
+    }
+
+
+
 
     public getSummaryBenefit(): Benefit{
       var exhibitBen = new Benefit("Summary");
@@ -132,43 +154,7 @@ export class ProductInfoService {
       var title = 'zibbit';
       var installer1 = this.getInstaller(title, '2.0.5.0'); //new Installer(title + "_v" + version, version, url);
 
-      //var installer1 = this.getInstaller(title, '1.0.7.0'); //new Installer(title + "_v" + version, version, url);
-
-      
-      // var downloadsPath = this.config.getUploadsPath() + '/macro-manager-installers';
-      // var title = 'MacroManager';
-      // var version = '1.1.68.0';
-      // var url = downloadsPath + '/MacroManager_v1.1.68.0.msi';
-      // var installer1 = new Installer(title + "_v" + version, version, url);
-
-      // var title = 'MacroManager';
-      // var version = '1.1.64.0';
-      // var url = downloadsPath + '/MacroManager_v1.1.64.0.msi';
-      // var installer1 = new Installer(title + "_v" + version, version, url);
-
-      // var downloadsPath = this.config.getUploadsPath() + '/macro-manager-installers';
-      // var title = 'MacroManager';
-      // var version = '1.0.7';
-      // var url = downloadsPath + '/MacroManager_v1.0.7.msi';
-      // var installer1 = new Installer(title + "_v" + version, version, url);
-
-      // var downloadsPath = this.config.getUploadsPath() + '/macro-manager-installers';
-      // var title = 'MacroManager';
-      // var version = '1.0.8';
-      // var url = downloadsPath + '/MacroManager_v1.0.8.msi';
-      // var installer2 = new Installer(title + "_v" + version, version, url);
-
-
-      // var downloadsPath = this.config.getUploadsPath() + '/macro-manager-installers';
-      // var title = 'MacroManager';
-      // var version = '1.0.9';
-      // var url = downloadsPath + '/MacroManager_v1.0.9.msi';
-      // var installer3 = new Installer(title + "_v" + version, version, url);
-
-
       var downloads: Installer[] = [
-        // installer3,
-        // installer2, 
         installer1
       ]
       return downloads;

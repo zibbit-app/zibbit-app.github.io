@@ -1,0 +1,56 @@
+<div class="page page-plans">
+    <section class="section-plans-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="banner">
+                        <h1 class="title">Checkout</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-checkout">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="order">
+                        <div class="header">
+                            <div class="subtitle">Order - Details</div>
+                        </div>
+                        <div class="body">
+                            <div class="fields">
+                                <div class="field">
+                                    <label for="cars">Plan:</label>
+                                    <select class="input" (change)="onPlanChange($event.target.value)" name="planType" id="planType">
+                                        <option [attr.selected]="plan.id == selectedPlanId ? true : null" value="{{plan.id}}" *ngFor="let plan of plans">{{plan.name}}</option>
+                                    </select>    
+                                </div>
+                                <div class="field">
+                                    <label for="cars">Options:</label>
+                                    <select class="input" (change)="onPriceChange($event.target.value)" name="priceType" id="priceType">
+                                        <option [attr.selected]="price.id == selectedPriceId ? true : null" value="{{price.id}}" *ngFor="let price of prices">{{price.description}}</option>
+                                    </select>    
+                                </div>
+
+                                <!-- <div class=field2>
+                                    <label>Register Organization?</label>
+                                    <input type="checkbox" name="registerOrg" [(ngModel)]="registerOrg" />
+                                </div>
+                                <div class=field *ngIf="isTenantMember">
+                                    <input type="text" name="orgName" [(ngModel)]="orgName" />
+                                </div> -->
+                            </div>    
+    
+                        </div>
+                        <div class="footer">
+                            <button [disabled]="!canCheckout" class="btn-theme" (click)="onCheckout()" type="submit">Checkout</button>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  
+</div>
+
+      

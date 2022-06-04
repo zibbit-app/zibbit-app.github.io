@@ -1,0 +1,108 @@
+@import 'global';
+@import 'page';
+
+
+.section-plans-banner{
+    background: $zibbitTheme;
+    .banner{
+        .title, .subtitle{
+            color: $white;
+            
+        }
+        text-align: center;
+        justify-content: center;
+        a{
+            margin-top: 20px;
+        }
+    }
+
+}
+
+.section-checkout{
+    // .order{
+    //     width: 400px;
+    //     margin: 0px auto;
+    //     // display: flex;
+    //     // flex-direction: column;
+    //     // justify-content: center;
+    //     // align-items: center;
+    //     .header, .footer{
+    //         text-align: center;
+    //         padding: 10px 20px;
+    //         background: $zibbitTheme;
+    //         color: white;
+    //     }
+    //     .footer{
+    //         // text-align: center;
+    //     }
+    //     .body{
+    //         padding: 10px 20px;
+    //         // .field{
+    //         //     margin-bottom: 10px;
+    //         //     display: flex;
+    //         //     align-items: center;
+    //         //     .input{
+    //         //         padding: 5px 20px;
+    //         //         flex-grow: 1;
+    //         //         flex-shrink: 1;
+    //         //     }
+    //         //     label{
+    //         //         min-width: 100px;
+    //         //     }
+    //         // }
+    //     }
+    
+    //     }
+
+
+        .order{
+            border: 1px solid lightgray;
+            box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+            width: 400px;
+            margin: 0px auto;
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: center;
+            // align-items: center;
+            .header, .footer{
+                // text-align: center;
+                padding: 10px 20px;
+                // background: $zibbitTheme;
+                // color: white;
+            }
+            .header{
+                color: $zibbitTheme;
+                text-align: center;
+                // background: $zibbitTheme;
+                // color: white;
+    
+    
+            }
+            .footer{
+                text-align: right;
+    
+                // text-align: center;
+            }
+            .body{
+                padding: 10px 20px;
+                .field{
+                    margin-bottom: 10px;
+                    display: flex;
+                    align-items: center;
+                    .input{
+                        padding: 5px 20px;
+                        flex-grow: 1;
+                        flex-shrink: 1;
+                    }
+                    label{
+                        min-width: 100px;
+                    }
+                }
+            }
+        
+            }
+    
+    // background: $zibbitTheme;
+
+    
+}
